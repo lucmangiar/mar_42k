@@ -1,0 +1,74 @@
+#icon-edit, #sigma-icon{
+	background-image: url('../assets/sigma-page-icon.png');
+	background-position: 0;
+}
+
+#debugger-pending-status{
+   display: none;
+   padding-top: 30px;
+   padding-left: 30px;
+}
+
+#ajax-response{
+    display: none;
+}
+
+p.debug-updated{
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #e6db55;
+    line-height: 1.5em;
+    background-color: #ffffe0;
+}
+
+p.debug-updated > a{
+    text-decoration: none;
+}
+
+p.debug-updated > a:hover{
+    text-decoration: underline;
+}
+
+.se-debug-dineromail-form, .se-debug-general-form{
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px 10px 20px;
+    margin: 10px 0 20px;
+    position: relative;
+}
+
+.raw-debug-response{
+    display: none;
+}
+
+.raw-debug-response-handle{
+    cursor: pointer;
+}
+
+.debug-close-button{
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+}
+
+.debug-heading{
+    color: #99c !important;
+
+}
+
+.sigmafat td{
+    padding: 20px 10px !important;
+}
+
+.sigma-image-preview{
+    max-width: 100%;
+}
+
+.sigma-help-sidebar-image{
+    max-width: 100%;
+}
+
+.sigma-100{
+    width: 100%;
+}

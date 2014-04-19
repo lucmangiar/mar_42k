@@ -1,0 +1,39 @@
+body{
+   background: white;
+   font-size: 12pt;
+   font-family: Georgia, serif;
+   color: black;
+}
+
+#header, #footer, .se-ologo, 
+.se-content, .se-pend, .se-ourl{
+   display: none;
+}
+
+.se-oname{
+  text-align: right;
+  padding: 0 0 25px !important;
+}
+
+.se-header{
+  text-align: right;
+}
+
+#container{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  float: none;
+}
+
+.se-thumbnail, .print-preview, #wpadminbar, #querylist{
+  display: none !important;
+}
+
+label{
+  font-weight: normal;
+}
+
+#wrapper{
+  border: none;
+}

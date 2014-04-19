@@ -1,0 +1,539 @@
+.se-wrapper{
+	background-color: #fff;
+	padding: 20px;
+  overflow: hidden;
+}
+
+.se-header{
+	font-size: 1.7em;
+	text-shadow: 1px 1px 4px  #999;
+	margin: 10px 0;
+}
+
+
+#track {
+    float: left;
+    width: 100%;
+}
+
+.se-content{
+	margin: 0px 0;
+}
+
+.se-content p{
+	line-height: 1.5em;
+}
+
+.se-thumbnail img, .se-ologo img, .se-product-thumbnail img{
+	max-width: 100%;
+	height: auto;
+}
+
+.se-product-thumbnail img{
+	width: 80%;
+	padding: 5px 0;
+}
+
+.se-half{
+	width: 50%;
+	float: left;
+	padding: 10px 0 5px;
+}
+
+.se-half p{
+	margin: 0 !important;
+}
+
+.se-ologo img{
+	max-width: 80%;
+}
+
+#dni-track{
+	border: 2px solid navy;
+	font-size: 2em;
+}
+
+#se-dni{
+	border: 1px solid blue;
+	font-size: 1.3em;
+}
+
+#se-track-button{
+	font-size: 2em;
+	padding: 10px;
+	border: 1px solid green;
+}
+
+#se-reg-button{
+	font-size: 1.5em;
+	border: 1px solid green;
+}
+
+#se-dni-first{
+	font-size: 1.5em;
+}
+
+#se-registration label, #se-registration input, #se-registration textarea{
+	display: block;
+	width: 45%;
+	float: left;
+}
+
+.se-submit p{
+	padding: 10px 0;
+	line-height: 1.5em;
+}
+
+#se-registration #se-reg-button, #se-pay-button, #se-proceed{
+	padding: 10px 0;
+	width: 60%;
+	display: block;
+	margin: 0 auto;
+	float:none;
+}
+
+.se-submit{
+	text-align:center;
+}
+
+#se-decidir-form #se-proceed{
+	width: 100%;
+}
+
+.se-row{
+	width: 100%;
+	display: inline-block;
+}
+
+.se-country{
+	display: none;
+    float: left;
+}
+
+#se-country{
+    width: 160px !important;
+}
+
+#se-registration #argentinian, #se-registration #nonargentinian{
+	width: 5%;
+}
+
+#se-registration label.se-checkbox{
+       width: 20%;
+}
+
+#se-q-answers{
+    width: 45% !important;
+}
+
+#se-greeting{
+	font-size: 1.3em;
+	border-top: 1px dashed #000;
+	padding-top: 25px;
+	margin-top: 0px;
+	font-weight: bold;
+    float: left;
+    width: 100%;
+}
+
+.se-greeting-checkout{
+    padding-bottom: 20px;
+}
+
+#event-price{
+    float: left;
+    width: 100%;
+    padding: 10px 0 25px;
+}
+
+.se-token-string-code{
+    font-size: 1.2em;
+    text-shadow: 1px 1px 0px #999;
+    color: #3366ff;
+}
+
+.se-token-string{
+    font-size: 0.9em;
+    font-weight: normal;
+}
+
+.se-reservation-fee{
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.se-firstname, .se-lastname{
+	display:none;
+}
+
+.se-discount-code > label{
+    color: #888;
+}
+
+.se-discount-code > input[type="text"]{
+    border: 1px solid #dde;
+}
+
+.sigma-products{
+	padding: 5px 10px 10px 20px;
+	width: 45%;
+}
+
+.sigma-products p{
+	padding: 4px 4px;
+}
+
+.sigma-products h3{
+	font-size: 1.3em;
+	padding: 5px;
+}
+
+#se-payment-options{
+	margin-top: 0;
+  float: left;
+  width: 100%;
+}
+
+.se-form-error{
+	border: 1px dashed #ff0000;
+	margin: 10px;
+	padding: 10px;
+	border-radius: 5px;
+}
+
+#se-medio-de-pago{
+	padding: 10px;
+	clear: both;
+}
+
+#se-medio-de-pago p{
+	margin: 0.4em 0;
+}
+
+.se-ourl, .se-pend, .se-content{
+	padding: 5px 0 !important;
+	float: right;
+}
+
+.se-oname{
+	padding: 20px 0 5px !important;
+	float: right;
+	font-size: 1.3em;
+}
+
+.se-nationality{
+	padding: 5px 0 30px;
+	display: block;
+	height: 10px;
+}
+
+.se-check-box{
+	margin-top: 5px;
+}
+
+.se-row select{
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	font-family: inherit;
+	padding: 4px;
+	color: inherit;
+	width: auto !important;
+}
+
+.se-other-nation{
+	width: 57px !important;
+}
+
+#se-reciept td{
+	padding: 10px 10px;
+	vertical-align: middle;
+}
+
+#se-reciept table{
+	margin-top: 0;
+}
+
+form div {
+	margin-bottom: .1em !important;
+}
+
+.se-nationality label.se-checkbox{
+	width: auto !important;
+	padding-right: 5px;
+}
+
+.se-nationality label.se-nation{
+	width: 21% !important;
+}
+
+#se-visa, #se-amex, #se-mc, #se-ep-visa, #se-ep-mc{
+	width: 70px;
+	height: 55px;
+	display: block;
+	margin-top: 4px;
+	background-image: url('../assets/credit-card-logos.png');
+}
+
+#se-amex{
+	background-position: 0 -55px;
+}
+
+#se-mc, #se-ep-mc{
+	background-position: 0 -110px;
+}
+
+#se-credit-cards{
+	width: 200px;
+	height: 90px;
+	display: block;
+	margin-top: 4px;
+	background-image: url('../assets/dineromail-credit-cards.png');
+    background-repeat: none;
+}
+
+#se-cash{
+	width: 200px;
+	height: 90px;
+	display: block;
+	margin-top: 4px;
+	background-image: url('../assets/dineromail-cash.png');
+	background-repeat: none;
+}
+
+#se-decidir-logo{
+	width: 200px;
+	height: 60px;
+	display: block;
+	margin-top: 4px;
+	background-image: url('../assets/decidir-logo.png');
+}
+
+#se-dineromail-logo{
+	width: 200px;
+	height: 60px;
+	display: block;
+	margin-top: 4px;
+	background-image: url('../assets/dineromail-logo.png');
+	background-repeat: no-repeat;
+}
+
+#se-cuentadigital-logo{
+	width: 200px;
+	height: 60px;
+	display: block;
+	margin-top: 4px;
+	background-image: url('../assets/cuentadigital-logo.png');
+	background-repeat: no-repeat;
+}
+
+#se-salesperson-logo{
+	width: 200px;
+	height: 60px;
+	display: block;
+	margin-top: 4px;
+	background-image: url('../assets/salesperson-logo.png');
+    background-repeat: no-repeat;
+}
+
+#se-ep-logo{
+	width: 200px;
+	height: 60px;
+	display: block;
+	margin-top: 4px;
+	background-image: url('../assets/ep-logo.png');
+    background-repeat: no-repeat;
+}
+
+#se-payment-processor-spacer{
+	width: 100%;
+	height: 25px;
+	display: block;
+}
+
+#se-product-button{
+	border: 1px solid #aaa;
+	border-radius: 5px;
+	padding: 10px 0;
+	text-align: center;
+	width: 300px;
+	display: block;
+	margin: 0 auto;
+	clear: both;
+	background: #aaa;
+	color: #fff;
+}
+
+#se-product-button:hover{
+	color: #444;
+	background-color: #ccc;
+}
+
+#se-back{
+	margin-top: 10px;
+	float: right;
+}
+
+#sigma-tracker #se-reciept{
+	margin: 10px 0;
+
+}
+
+.se-payments-wrapper #se-decidir-form{
+  display: none;
+}
+
+#se-modify{
+  float: right;
+  margin-top: 10px;
+}
+
+#se-retrieve{
+  margin-top: 10px;
+  color: #339;
+  padding: 10px;
+}
+
+#se-order{
+  clear: both;
+}
+
+#se-tracker-greeting{
+  float: left;
+  clear: both;
+}
+
+.se-payment-status{
+  font-size: 1.3em;
+  margin: 1em 0;
+}
+
+.se-sequence-number{
+  font-size: 1.6em;
+  margin: 1em 0;
+  color: #333;
+}
+
+.se-tracker-name{
+  margin: 20px 0 0 0;
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
+#se-resume-payment{
+  margin: 15px 0 5px 0;
+  padding: 10px;
+  padding: 10px;
+  border: 1px solid green;
+}
+
+.se-processor-box, .se-processor-methods{
+    float: left;
+    width: 25%;
+
+}
+
+.print-preview{
+    cursor: pointer;
+}
+
+#se-number-query{
+    width: 35% !important;
+    margin-right: 10%;
+}
+
+#se-expandable-number-selection{
+    display: none;
+}
+
+#se-selection-handle{
+    cursor: pointer;
+    color: #339999;
+    font-size: 15px;
+}
+
+#se-number-not-available{
+    color: #ff0000;
+}
+
+.se-number-notice{
+    color: #339999;
+    display: block;
+    clear: both;
+}
+
+#se-number-selection-handle{
+    cursor: pointer;
+    color: #339999;
+    font-size: 18px;
+    width: 100% !important;
+    font-weight: normal;
+}
+
+#se-number-reservation-form{
+    overflow: hidden:
+}
+
+#se-number-selection-loading{
+    padding: 10px 0;
+    display: none;
+    text-align: center;
+}
+
+#se-number-selection-loading{
+    color: #339999;
+    font-size: 18px;
+    font-weight: normal;
+}
+
+.se-red{
+    color: #ff0000;
+    font-weight: normal;
+}
+
+#se-payment-banner{
+    margin: 15px 0;
+}
+
+.se-payment-banner-image{
+    margin-bottom: 20px;
+}
+
+.se-tourist-options{
+    margin-right: 5px;
+    margin-left: 10px;
+}
+
+@media screen and (max-width: 650px) {
+    .se-half{
+        width: 100%;
+    }
+
+    #se-registration label, #se-registration input, #se-registration textarea{
+        width: 100%;
+    }
+
+    .se-nationality label.se-nation {
+        width: 100% !important;
+    }
+
+    #se-registration #argentinian, #se-registration #nonargentinian {
+        width: 30%;
+    }
+
+    #se-number-query {
+        width: 100% !important;
+        margin-right: 10%;
+    }
+
+    #se-registration #se-reg-button, #se-pay-button, #se-proceed {
+        width: 100%;
+    }
+
+    .se-processor-box, .se-processor-methods {
+        width: 100%;
+    }
+
+    .sigma-products {
+        padding: 5px 10px 10px 10px;
+    }
+}

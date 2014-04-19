@@ -1,0 +1,1686 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Sigma Ticketing\n"
+"POT-Creation-Date: 2013-08-05 22:42-0300\n"
+"PO-Revision-Date: 2013-08-05 22:51-0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.5\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: ..\n"
+
+#: sigma-events.php:237 ../sigma_events/sigma-events.php:237
+msgid "Event Data"
+msgstr "Event Data"
+
+#: admin/class-sigma-admin-menu.php:154
+#: ../sigma_events/admin/class-sigma-admin-menu.php:154
+msgid "Sigma Events"
+msgstr "Sigma Events"
+
+#: admin/class-sigma-admin-menu.php:155
+#: ../sigma_events/admin/class-sigma-admin-menu.php:155
+msgid "Dashboard"
+msgstr "Dashboard"
+
+#: admin/class-sigma-admin-menu.php:173
+#: ../sigma_events/admin/class-sigma-admin-menu.php:173
+msgid "Sigma Events Dashboard"
+msgstr "Sigma Events Dashboard"
+
+#: admin/class-sigma-processors-menu.php:152
+#: admin/class-sigma-processors-menu.php:153
+#: ../sigma_events/admin/class-sigma-processors-menu.php:152
+#: ../sigma_events/admin/class-sigma-processors-menu.php:153
+msgid "Processors"
+msgstr "Processor"
+
+#: admin/class-sigma-processors-menu.php:169
+#: ../sigma_events/admin/class-sigma-processors-menu.php:169
+msgid "Sigma Payment Processors"
+msgstr "Sigma Payment Processors"
+
+#: admin/class-sigma-security-menu.php:141
+#: admin/class-sigma-security-menu.php:142
+#: ../sigma_events/admin/class-sigma-security-menu.php:141
+#: ../sigma_events/admin/class-sigma-security-menu.php:142
+msgid "Security"
+msgstr "Security"
+
+#: admin/class-sigma-security-menu.php:158
+#: ../sigma_events/admin/class-sigma-security-menu.php:158
+msgid " ( Disabled ) "
+msgstr " ( Disabled ) "
+
+#: admin/class-sigma-security-menu.php:159
+#: ../sigma_events/admin/class-sigma-security-menu.php:159
+msgid "Sigma Security Dashboard"
+msgstr "Sigma Security Dashboard"
+
+#: admin/tab-advanced.php:12 ../sigma_events/admin/tab-advanced.php:12
+msgid "Payment Tracker"
+msgstr "Payment Tracker"
+
+#: admin/tab-advanced.php:18 ../sigma_events/admin/tab-advanced.php:18
+msgid "Configure Tracker"
+msgstr "Configure Tracker"
+
+#: admin/tab-advanced.php:24 ../sigma_events/admin/tab-advanced.php:24
+msgid "Security Module"
+msgstr "Security Module"
+
+#: admin/tab-advanced.php:30 ../sigma_events/admin/tab-advanced.php:30
+msgid "Configure Security Module"
+msgstr "Configure Security Module"
+
+#: admin/tab-advanced.php:36 ../sigma_events/admin/tab-advanced.php:36
+msgid "Forget Code Page"
+msgstr ""
+
+#: admin/tab-advanced.php:42 ../sigma_events/admin/tab-advanced.php:42
+#, fuzzy
+msgid "Configure Forget Code Security"
+msgstr "Configure Security Module"
+
+#: admin/tab-advanced.php:48 ../sigma_events/admin/tab-advanced.php:48
+msgid "Use Tracker GET"
+msgstr "Use Tracker GET"
+
+#: admin/tab-advanced.php:60 ../sigma_events/admin/tab-advanced.php:60
+msgid "Use GET method for the tracker."
+msgstr "Use GET method for the tracker."
+
+#: admin/tab-advanced.php:66 ../sigma_events/admin/tab-advanced.php:66
+msgid "Use Tracker POST"
+msgstr "Use Tracker POST"
+
+#: admin/tab-advanced.php:78 ../sigma_events/admin/tab-advanced.php:78
+msgid "Use POST method for the tracker."
+msgstr "Use POST method for the tracker."
+
+#: admin/tab-advanced.php:84 ../sigma_events/admin/tab-advanced.php:84
+msgid "Sigma Security Module"
+msgstr "Sigma Security Module"
+
+#: admin/tab-advanced.php:96 ../sigma_events/admin/tab-advanced.php:96
+msgid "Enable Security Module."
+msgstr "Enable Security Module."
+
+#: admin/tab-advanced.php:102 ../sigma_events/admin/tab-advanced.php:102
+msgid "Forget Code Captcha"
+msgstr ""
+
+#: admin/tab-advanced.php:114 ../sigma_events/admin/tab-advanced.php:114
+msgid "Enable Really Simple Captcha."
+msgstr ""
+
+#: admin/tab-advanced.php:120 ../sigma_events/admin/tab-advanced.php:120
+#, fuzzy
+msgid "Forget Code Email"
+msgstr "Agent Email"
+
+#: admin/tab-advanced.php:132 ../sigma_events/admin/tab-advanced.php:132
+msgid "Enable Email instead Display."
+msgstr ""
+
+#: admin/tab-advanced.php:139 admin/tab-emails.php:356
+#: admin/tab-processor-cuentadigital.php:136
+#: admin/tab-processor-decidir.php:68 admin/tab-processor-dineromail.php:68
+#: admin/tab-processor-easyplanners.php:83
+#: admin/tab-processor-salesperson.php:28 admin/tab-processor-sigma.php:28
+#: ../sigma_events/admin/tab-advanced.php:139
+#: ../sigma_events/admin/tab-emails.php:356
+#: ../sigma_events/admin/tab-processor-cuentadigital.php:136
+#: ../sigma_events/admin/tab-processor-decidir.php:68
+#: ../sigma_events/admin/tab-processor-dineromail.php:68
+#: ../sigma_events/admin/tab-processor-easyplanners.php:83
+#: ../sigma_events/admin/tab-processor-salesperson.php:28
+#: ../sigma_events/admin/tab-processor-sigma.php:28
+msgid "Save Settings"
+msgstr "Save Settings"
+
+#: admin/tab-debugger.php:31 ../sigma_events/admin/tab-debugger.php:31
+msgid "Query Database"
+msgstr ""
+
+#: admin/tab-debugger.php:37 ../sigma_events/admin/tab-debugger.php:37
+msgid "Query Dineromail"
+msgstr "Query Dineromail"
+
+#: admin/tab-emails.php:12 ../sigma_events/admin/tab-emails.php:12
+msgid "Email Sender"
+msgstr "Email Sender"
+
+#: admin/tab-emails.php:19 ../sigma_events/admin/tab-emails.php:19
+msgid "User Emails"
+msgstr "User Emails"
+
+#: admin/tab-emails.php:26 ../sigma_events/admin/tab-emails.php:26
+msgid "Admin Emails"
+msgstr "Admin Emails"
+
+#: admin/tab-emails.php:33 ../sigma_events/admin/tab-emails.php:33
+msgid "Organizer Emails"
+msgstr "Organizer Emails"
+
+#: admin/tab-emails.php:40 ../sigma_events/admin/tab-emails.php:40
+msgid "Developer Emails"
+msgstr "Developer Emails"
+
+#: admin/tab-emails.php:46 ../sigma_events/admin/tab-emails.php:46
+msgid "Configure Email Sender"
+msgstr "Configure Email Sender"
+
+#: admin/tab-emails.php:51 ../sigma_events/admin/tab-emails.php:51
+msgid "Configure User Email Settings"
+msgstr "Configure User Email Settings"
+
+#: admin/tab-emails.php:56 ../sigma_events/admin/tab-emails.php:56
+msgid "Configure Admin Email Settings"
+msgstr "Configure Admin Email Settings"
+
+#: admin/tab-emails.php:61 ../sigma_events/admin/tab-emails.php:61
+msgid "Configure Organizer Email Settings"
+msgstr "Configure Organizer Email Settings"
+
+#: admin/tab-emails.php:66 ../sigma_events/admin/tab-emails.php:66
+msgid "Configure Developer Email Settings"
+msgstr "Configure Developer Email Settings"
+
+#: admin/tab-emails.php:72 ../sigma_events/admin/tab-emails.php:72
+msgid "Sender Name"
+msgstr "Sender Name"
+
+#: admin/tab-emails.php:83 ../sigma_events/admin/tab-emails.php:83
+msgid "Email Senders Name"
+msgstr "Email Senders Name"
+
+#: admin/tab-emails.php:89 ../sigma_events/admin/tab-emails.php:89
+msgid "Sender Email"
+msgstr "Sender Email"
+
+#: admin/tab-emails.php:100 ../sigma_events/admin/tab-emails.php:100
+msgid "Email Senders Email"
+msgstr "Email Senders Email"
+
+#: admin/tab-emails.php:106 ../sigma_events/admin/tab-emails.php:106
+msgid "User Email"
+msgstr "User Email"
+
+#: admin/tab-emails.php:118 ../sigma_events/admin/tab-emails.php:118
+msgid ""
+"Send an email to the user for each Approved and Rejected payment \n"
+"        <br />once the Decidir POST is received. Using the templates defined "
+"by \n"
+"        <br />the events admin page."
+msgstr ""
+"Send an email to the user for each Approved and Rejected payment \n"
+"        <br />once the Decidir POST is received. Using the templates defined "
+"by \n"
+"        <br />the events admin page."
+
+#: admin/tab-emails.php:126 ../sigma_events/admin/tab-emails.php:126
+msgid "User Products Email"
+msgstr "User Products Email"
+
+#: admin/tab-emails.php:138 ../sigma_events/admin/tab-emails.php:138
+msgid ""
+"Send an email to the user for each Approved product. \n"
+"        <br />once the Decidir POST is received. Using the templates defined "
+"by \n"
+"        <br />the products admin page."
+msgstr ""
+"Send an email to the user for each Approved product. \n"
+"        <br />once the Decidir POST is received. Using the templates defined "
+"by \n"
+"        <br />the products admin page."
+
+#: admin/tab-emails.php:146 ../sigma_events/admin/tab-emails.php:146
+msgid "Admin Email Address"
+msgstr "Admin Email Address"
+
+#: admin/tab-emails.php:157 ../sigma_events/admin/tab-emails.php:157
+msgid "Admin Email"
+msgstr "Admin Email"
+
+#: admin/tab-emails.php:163 ../sigma_events/admin/tab-emails.php:163
+msgid "Enable Admin Email"
+msgstr "Enable Admin Email"
+
+#: admin/tab-emails.php:175 ../sigma_events/admin/tab-emails.php:175
+msgid ""
+"Send an email to the admin for each Approved or Rejected payment \n"
+"        <br />once the Decidir POST is received. This is a raw data array of "
+"POST \n"
+"        <br />content received by Decidir and registration data about the "
+"user."
+msgstr ""
+"Send an email to the admin for each Approved or Rejected payment \n"
+"        <br />once the Decidir POST is received. This is a raw data array of "
+"POST \n"
+"        <br />content received by Decidir and registration data about the "
+"user."
+
+#: admin/tab-emails.php:183 ../sigma_events/admin/tab-emails.php:183
+msgid "Enable POST Admin Email"
+msgstr "Enable POST Admin Email"
+
+#: admin/tab-emails.php:195 ../sigma_events/admin/tab-emails.php:195
+msgid ""
+"Send an email to the admin for each received POST from Decidir \n"
+"        <br />regardless of the validity of the POST. This is a raw POST "
+"content email \n"
+"        <br />without any processing."
+msgstr ""
+"Send an email to the admin for each received POST from Decidir \n"
+"        <br />regardless of the validity of the POST. This is a raw POST "
+"content email \n"
+"        <br />without any processing."
+
+#: admin/tab-emails.php:203 ../sigma_events/admin/tab-emails.php:203
+msgid "Enable Debug Admin Email"
+msgstr "Enable Debug Admin Email"
+
+#: admin/tab-emails.php:215 ../sigma_events/admin/tab-emails.php:215
+msgid ""
+"Send an email to the admin for each Approved or Rejected payment \n"
+"        <br />once the Decidir POST is processed completely. This is a "
+"detailed report of the tasks \n"
+"        <br />executed after receiving the POST. Can be used for debugging."
+msgstr ""
+"Send an email to the admin for each Approved or Rejected payment \n"
+"        <br />once the Decidir POST is processed completely. This is a "
+"detailed report of the tasks \n"
+"        <br />executed after receiving the POST. Can be used for debugging."
+
+#: admin/tab-emails.php:223 ../sigma_events/admin/tab-emails.php:223
+msgid "Enable Organizer Admin Email"
+msgstr "Enable Organizer Admin Email"
+
+#: admin/tab-emails.php:235 ../sigma_events/admin/tab-emails.php:235
+msgid "Send a copy of Admin Email to the Organizer."
+msgstr "Send a copy of Admin Email to the Organizer."
+
+#: admin/tab-emails.php:241 ../sigma_events/admin/tab-emails.php:241
+msgid "Enable Oraganizer User Email"
+msgstr "Enable Oraganizer User Email"
+
+#: admin/tab-emails.php:253 ../sigma_events/admin/tab-emails.php:253
+msgid "Send a copy of User Email to the Organizer."
+msgstr "Send a copy of User Email to the Organizer."
+
+#: admin/tab-emails.php:259 ../sigma_events/admin/tab-emails.php:259
+msgid "Organizer User Products Email"
+msgstr "Organizer User Products Email"
+
+#: admin/tab-emails.php:271 ../sigma_events/admin/tab-emails.php:271
+msgid ""
+"Send an email to the organizer for each Approved product. \n"
+"        <br />once the Decidir POST is received. Using the templates defined "
+"by \n"
+"        <br />the products admin page."
+msgstr ""
+"Send an email to the organizer for each Approved product. \n"
+"        <br />once the Decidir POST is received. Using the templates defined "
+"by \n"
+"        <br />the products admin page."
+
+#: admin/tab-emails.php:279 ../sigma_events/admin/tab-emails.php:279
+msgid "Developer Email Address"
+msgstr "Developer Email Address"
+
+#: admin/tab-emails.php:290 ../sigma_events/admin/tab-emails.php:290
+msgid "Developer Email"
+msgstr "Developer Email"
+
+#: admin/tab-emails.php:296 ../sigma_events/admin/tab-emails.php:296
+msgid "Enable Developer Email"
+msgstr "Enable Developer Email"
+
+#: admin/tab-emails.php:308 ../sigma_events/admin/tab-emails.php:308
+msgid ""
+"Send an email to the dev for each Approved or Rejected payment \n"
+"        <br />once the Decidir POST is received. This is a raw data array of "
+"POST \n"
+"        <br />content received by Decidir and registration data about the "
+"user."
+msgstr ""
+"Send an email to the dev for each Approved or Rejected payment \n"
+"        <br />once the Decidir POST is received. This is a raw data array of "
+"POST \n"
+"        <br />content received by Decidir and registration data about the "
+"user."
+
+#: admin/tab-emails.php:316 ../sigma_events/admin/tab-emails.php:316
+msgid "Enable POST Developer Email"
+msgstr "Enable POST Developer Email"
+
+#: admin/tab-emails.php:328 ../sigma_events/admin/tab-emails.php:328
+msgid ""
+"Send an email to the dev for each received POST from Decidir \n"
+"        <br />regardless of the validity of the POST. This is a raw POST "
+"content email \n"
+"        <br />without any processing."
+msgstr ""
+"Send an email to the dev for each received POST from Decidir \n"
+"        <br />regardless of the validity of the POST. This is a raw POST "
+"content email \n"
+"        <br />without any processing."
+
+#: admin/tab-emails.php:336 ../sigma_events/admin/tab-emails.php:336
+msgid "Enable Debug Developer Email"
+msgstr "Enable Debug Developer Email"
+
+#: admin/tab-emails.php:348 ../sigma_events/admin/tab-emails.php:348
+msgid ""
+"Send an email to the dev for each Approved or Rejected payment \n"
+"        <br />once the Decidir POST is processed completely. This is a "
+"detailed report of the tasks \n"
+"        <br />executed after receiving the POST. Can be used for debugging."
+msgstr ""
+"Send an email to the dev for each Approved or Rejected payment \n"
+"        <br />once the Decidir POST is processed completely. This is a "
+"detailed report of the tasks \n"
+"        <br />executed after receiving the POST. Can be used for debugging."
+
+#: admin/tab-processor-cuentadigital.php:14
+#: ../sigma_events/admin/tab-processor-cuentadigital.php:14
+msgid "CuentaDigital Settings"
+msgstr "CuentaDigital Settings"
+
+#: admin/tab-processor-cuentadigital.php:28
+#: ../sigma_events/admin/tab-processor-cuentadigital.php:28
+msgid "Enable Sandbox Mode"
+msgstr "Enable Sandbox Mode"
+
+#: admin/tab-processor-cuentadigital.php:39
+#: ../sigma_events/admin/tab-processor-cuentadigital.php:39
+msgid "Enable Sandbox for Testing"
+msgstr "Enable Sandbox for Testing"
+
+#: admin/tab-processor-cuentadigital.php:47
+#: ../sigma_events/admin/tab-processor-cuentadigital.php:47
+msgid "SandBox Report URL"
+msgstr "SandBox Report URL"
+
+#: admin/tab-processor-cuentadigital.php:64
+#: ../sigma_events/admin/tab-processor-cuentadigital.php:64
+msgid "Production Report URL"
+msgstr "Production Report URL"
+
+#: admin/tab-processor-cuentadigital.php:81
+#: ../sigma_events/admin/tab-processor-cuentadigital.php:81
+msgid "Authorization Code"
+msgstr "Authorization Code"
+
+#: admin/tab-processor-cuentadigital.php:98 admin/tab-processor-decidir.php:28
+#: admin/tab-processor-dineromail.php:28
+#: ../sigma_events/admin/tab-processor-cuentadigital.php:98
+#: ../sigma_events/admin/tab-processor-decidir.php:28
+#: ../sigma_events/admin/tab-processor-dineromail.php:28
+msgid "Enable Logging"
+msgstr "Enable Logging"
+
+#: admin/tab-processor-cuentadigital.php:109
+#: ../sigma_events/admin/tab-processor-cuentadigital.php:109
+msgid "Log all data related to CuentaDigital Processor"
+msgstr "Log all data related to CuentaDigital Processor"
+
+#: admin/tab-processor-cuentadigital.php:117
+#: ../sigma_events/admin/tab-processor-cuentadigital.php:117
+msgid "Cron Interval"
+msgstr "Cron Interval"
+
+#: admin/tab-processor-cuentadigital.php:128
+#: ../sigma_events/admin/tab-processor-cuentadigital.php:128
+msgid "In Seconds"
+msgstr "In Seconds"
+
+#: admin/tab-processor-cuentadigital.php:153
+#: ../sigma_events/admin/tab-processor-cuentadigital.php:153
+msgid "CuentaDigital Utilities"
+msgstr "CuentaDigital Utilities"
+
+#: admin/tab-processor-cuentadigital.php:256
+#: ../sigma_events/admin/tab-processor-cuentadigital.php:256
+msgid "CuentaDigital Cron Daemon"
+msgstr "CuentaDigital Cron Daemon"
+
+#: admin/tab-processor-cuentadigital.php:272
+#: ../sigma_events/admin/tab-processor-cuentadigital.php:272
+msgid "Download Logs"
+msgstr ""
+
+#: admin/tab-processor-decidir.php:14
+#: ../sigma_events/admin/tab-processor-decidir.php:14
+msgid "Decidir Settings"
+msgstr "Decidir Settings"
+
+#: admin/tab-processor-decidir.php:39
+#: ../sigma_events/admin/tab-processor-decidir.php:39
+msgid "Enable Decidir Logging"
+msgstr "Enable Decidir Logging"
+
+#: admin/tab-processor-decidir.php:47 admin/tab-processor-dineromail.php:47
+#: ../sigma_events/admin/tab-processor-decidir.php:47
+#: ../sigma_events/admin/tab-processor-dineromail.php:47
+msgid "Validate IP"
+msgstr "Validate IP"
+
+#: admin/tab-processor-decidir.php:60
+#: ../sigma_events/admin/tab-processor-decidir.php:60
+msgid "Restrict POSTs to Decidir IP"
+msgstr "Restrict POSTs to Decidir IP"
+
+#: admin/tab-processor-dineromail.php:14
+#: ../sigma_events/admin/tab-processor-dineromail.php:14
+msgid "Dineromail Settings"
+msgstr "Dineromail Settings"
+
+#: admin/tab-processor-dineromail.php:39
+#: ../sigma_events/admin/tab-processor-dineromail.php:39
+msgid "Enable Dineromail Logging"
+msgstr "Enable Dineromail Logging"
+
+#: admin/tab-processor-dineromail.php:60
+#: ../sigma_events/admin/tab-processor-dineromail.php:60
+msgid "Restrict POSTs to Dineromail IP"
+msgstr "Restrict POSTs to Dineromail IP"
+
+#: admin/tab-processor-easyplanners.php:14
+#: ../sigma_events/admin/tab-processor-easyplanners.php:14
+msgid "EasyPlanners Settings"
+msgstr "EasyPlanners Settings"
+
+#: admin/tab-processor-easyplanners.php:28
+#: ../sigma_events/admin/tab-processor-easyplanners.php:28
+msgid "Transport Mode"
+msgstr "Transport Mode"
+
+#: admin/tab-processor-easyplanners.php:41
+#: ../sigma_events/admin/tab-processor-easyplanners.php:41
+msgid "Transport Method"
+msgstr "Transport Method"
+
+#: admin/tab-processor-easyplanners.php:49
+#: ../sigma_events/admin/tab-processor-easyplanners.php:49
+msgid "EasyPlanners URL"
+msgstr "EasyPlanners URL"
+
+#: admin/tab-processor-easyplanners.php:66
+#: ../sigma_events/admin/tab-processor-easyplanners.php:66
+msgid "EasyPlanners Password"
+msgstr "EasyPlanners Password"
+
+#: admin/tab-processor-salesperson.php:14
+#: ../sigma_events/admin/tab-processor-salesperson.php:14
+msgid "SalesPerson Settings"
+msgstr "SalesPerson Settings"
+
+#: admin/tab-processor-sigma.php:14
+#: ../sigma_events/admin/tab-processor-sigma.php:14
+msgid "Sigma Settings"
+msgstr "Sigma Settings"
+
+#: admin/tab-security-settings.php:12
+#: ../sigma_events/admin/tab-security-settings.php:12
+msgid "Registration Gate"
+msgstr "Registration Gate"
+
+#: admin/tab-security-settings.php:18
+#: ../sigma_events/admin/tab-security-settings.php:18
+msgid "Manage Registration Gate Security"
+msgstr "Manage Registration Gate Security"
+
+#: admin/tab-security-settings.php:24 admin/tab-security-settings.php:132
+#: ../sigma_events/admin/tab-security-settings.php:24
+#: ../sigma_events/admin/tab-security-settings.php:132
+msgid "Duration of an IP address memory"
+msgstr "Duration of an IP address memory"
+
+#: admin/tab-security-settings.php:34 admin/tab-security-settings.php:142
+#: ../sigma_events/admin/tab-security-settings.php:34
+#: ../sigma_events/admin/tab-security-settings.php:142
+msgid "Allowed no of Attempts"
+msgstr "Allowed no of Attempts"
+
+#: admin/tab-security-settings.php:46 admin/tab-security-settings.php:154
+#: ../sigma_events/admin/tab-security-settings.php:46
+#: ../sigma_events/admin/tab-security-settings.php:154
+msgid "No of attempts to allow before blocking"
+msgstr "No of attempts to allow before blocking"
+
+#: admin/tab-security-settings.php:54 admin/tab-security-settings.php:162
+#: ../sigma_events/admin/tab-security-settings.php:54
+#: ../sigma_events/admin/tab-security-settings.php:162
+msgid "(s) Forget visits count of an IP after this period"
+msgstr "(s) Forget visits count of an IP after this period"
+
+#: admin/tab-security-settings.php:60 admin/tab-security-settings.php:168
+#: ../sigma_events/admin/tab-security-settings.php:60
+#: ../sigma_events/admin/tab-security-settings.php:168
+msgid "Minimum Allowed Time Between Attempts"
+msgstr "Minimum Allowed Time Between Attempts"
+
+#: admin/tab-security-settings.php:72 admin/tab-security-settings.php:180
+#: ../sigma_events/admin/tab-security-settings.php:72
+#: ../sigma_events/admin/tab-security-settings.php:180
+msgid "Block Visits with Higher Frequency"
+msgstr "Block Visits with Higher Frequency"
+
+#: admin/tab-security-settings.php:78 admin/tab-security-settings.php:186
+#: ../sigma_events/admin/tab-security-settings.php:78
+#: ../sigma_events/admin/tab-security-settings.php:186
+msgid "Redirection Page"
+msgstr "Redirection Page"
+
+#: admin/tab-security-settings.php:90 admin/tab-security-settings.php:198
+#: ../sigma_events/admin/tab-security-settings.php:90
+#: ../sigma_events/admin/tab-security-settings.php:198
+msgid "Where to redirect when blocked"
+msgstr "Where to redirect when blocked"
+
+#: admin/tab-security-settings.php:96 admin/tab-security-settings.php:204
+#: ../sigma_events/admin/tab-security-settings.php:96
+#: ../sigma_events/admin/tab-security-settings.php:204
+msgid "Log Location"
+msgstr "Log Location"
+
+#: admin/tab-security-settings.php:108
+#: ../sigma_events/admin/tab-security-settings.php:108
+msgid "Log filename"
+msgstr "Log filename"
+
+#: admin/tab-security-settings.php:120
+#: ../sigma_events/admin/tab-security-settings.php:120
+msgid "Confirmation Gate"
+msgstr "Confirmation Gate"
+
+#: admin/tab-security-settings.php:126
+#: ../sigma_events/admin/tab-security-settings.php:126
+msgid "Manage Confirmation Gate Security"
+msgstr "Manage Confirmation Gate Security"
+
+#: admin/tab-security-settings.php:216
+#: ../sigma_events/admin/tab-security-settings.php:216
+msgid "Log filname"
+msgstr "Log filname"
+
+#: admin/tab-security-settings.php:224
+#: ../sigma_events/admin/tab-security-settings.php:224
+msgid "Save Security Settings"
+msgstr "Save Security Settings"
+
+#: admin/tab-utilities.php:9 ../sigma_events/admin/tab-utilities.php:9
+msgid "Download Registration Data"
+msgstr "Download Registration Data"
+
+#: admin/tab-utilities.php:15 ../sigma_events/admin/tab-utilities.php:15
+msgid "Download Payment Processor POSTed Data"
+msgstr "Download Payment Processor POSTed Data"
+
+#: admin/tab-utilities.php:21 ../sigma_events/admin/tab-utilities.php:21
+msgid "Download Payment Processor Logs"
+msgstr "Download Payment Processor Logs"
+
+#: admin/tab-utilities.php:27 ../sigma_events/admin/tab-utilities.php:27
+msgid "Delete Registration Records"
+msgstr "Delete Registration Records"
+
+#: admin/tab-utilities.php:115 ../sigma_events/admin/tab-utilities.php:115
+msgid "SQL Queries"
+msgstr "SQL Queries"
+
+#: inc/class-sigma-admin-pointers.php:71
+#: ../sigma_events/inc/class-sigma-admin-pointers.php:71
+msgid "Email Template Tags"
+msgstr "Email Template Tags"
+
+#: inc/class-sigma-admin-pointers.php:72
+#: ../sigma_events/inc/class-sigma-admin-pointers.php:72
+msgid "Email template help moved to the help tab."
+msgstr "Email template help moved to the help tab."
+
+#: inc/class-sigma-cron.php:55 ../sigma_events/inc/class-sigma-cron.php:55
+msgid "CuentaDigital Interval"
+msgstr "CuentaDigital Interval"
+
+#: inc/class-sigma-discount-codes.php:42
+#: ../sigma_events/inc/class-sigma-discount-codes.php:42
+#, fuzzy
+msgid "Code"
+msgstr "Add Code"
+
+#: inc/class-sigma-discount-codes.php:43
+#: inc/class-sigma-discount-codes.php:190
+#: ../sigma_events/inc/class-sigma-discount-codes.php:43
+#: ../sigma_events/inc/class-sigma-discount-codes.php:190
+msgid "Team Name"
+msgstr "Team Name"
+
+#: inc/class-sigma-discount-codes.php:44
+#: ../sigma_events/inc/class-sigma-discount-codes.php:44
+#, fuzzy
+msgid "Total Codes"
+msgstr "Discount Codes"
+
+#: inc/class-sigma-discount-codes.php:45
+#: ../sigma_events/inc/class-sigma-discount-codes.php:45
+msgid "Remaining Codes"
+msgstr ""
+
+#: inc/class-sigma-discount-codes.php:46
+#: ../sigma_events/inc/class-sigma-discount-codes.php:46
+msgid "Since"
+msgstr ""
+
+#: inc/class-sigma-discount-codes.php:135 inc/class-sigma-events.php:191
+#: ../sigma_events/inc/class-sigma-discount-codes.php:135
+#: ../sigma_events/inc/class-sigma-events.php:191
+msgid "Discount Codes"
+msgstr "Discount Codes"
+
+#: inc/class-sigma-discount-codes.php:136
+#: ../sigma_events/inc/class-sigma-discount-codes.php:136
+msgid "Discount Code"
+msgstr "Discount Code"
+
+#: inc/class-sigma-discount-codes.php:137
+#: ../sigma_events/inc/class-sigma-discount-codes.php:137
+msgid "Add Code"
+msgstr "Add Code"
+
+#: inc/class-sigma-discount-codes.php:138
+#: ../sigma_events/inc/class-sigma-discount-codes.php:138
+msgid "Add New Code"
+msgstr "Add New Code"
+
+#: inc/class-sigma-discount-codes.php:139
+#: ../sigma_events/inc/class-sigma-discount-codes.php:139
+msgid "Edit Code"
+msgstr "Edit Code"
+
+#: inc/class-sigma-discount-codes.php:158
+#: ../sigma_events/inc/class-sigma-discount-codes.php:158
+msgid "Manage Discount Code"
+msgstr "Manage Discount Code"
+
+#: inc/class-sigma-discount-codes.php:166
+#: ../sigma_events/inc/class-sigma-discount-codes.php:166
+msgid "Discount Code Status"
+msgstr "Discount Code Status"
+
+#: inc/class-sigma-discount-codes.php:192
+#: ../sigma_events/inc/class-sigma-discount-codes.php:192
+msgid "Discount Rate"
+msgstr "Discount Rate"
+
+#: inc/class-sigma-discount-codes.php:194
+#: ../sigma_events/inc/class-sigma-discount-codes.php:194
+msgid "Code Quantity"
+msgstr "Code Quantity"
+
+#: inc/class-sigma-events.php:101
+#: ../sigma_events/inc/class-sigma-events.php:101
+msgid "Events"
+msgstr "Events"
+
+#: inc/class-sigma-events.php:102
+#: ../sigma_events/inc/class-sigma-events.php:102
+msgid "Event"
+msgstr "Event"
+
+#: inc/class-sigma-events.php:103
+#: ../sigma_events/inc/class-sigma-events.php:103
+msgid "Add Event"
+msgstr "Add Event"
+
+#: inc/class-sigma-events.php:104
+#: ../sigma_events/inc/class-sigma-events.php:104
+msgid "View Event Registration Page"
+msgstr "View Event Registration Page"
+
+#: inc/class-sigma-events.php:105
+#: ../sigma_events/inc/class-sigma-events.php:105
+msgid "Add New Event"
+msgstr "Add New Event"
+
+#: inc/class-sigma-events.php:106
+#: ../sigma_events/inc/class-sigma-events.php:106
+msgid "Edit Event"
+msgstr "Edit Event"
+
+#: inc/class-sigma-events.php:128
+#: ../sigma_events/inc/class-sigma-events.php:128
+msgid "Event Header Image"
+msgstr "Event Header Image"
+
+#: inc/class-sigma-events.php:137
+#: ../sigma_events/inc/class-sigma-events.php:137
+msgid "Event Description"
+msgstr "Event Description"
+
+#: inc/class-sigma-events.php:146
+#: ../sigma_events/inc/class-sigma-events.php:146
+msgid "Event Organizer"
+msgstr "Event Organizer"
+
+#: inc/class-sigma-events.php:155
+#: ../sigma_events/inc/class-sigma-events.php:155
+msgid "Event Period"
+msgstr "Event Period"
+
+#: inc/class-sigma-events.php:164
+#: ../sigma_events/inc/class-sigma-events.php:164
+msgid "Event Price"
+msgstr "Event Price"
+
+#: inc/class-sigma-events.php:173
+#: ../sigma_events/inc/class-sigma-events.php:173
+msgid "Payment Processor"
+msgstr "Payment Processor"
+
+#: inc/class-sigma-events.php:182
+#: ../sigma_events/inc/class-sigma-events.php:182
+msgid "Number Sequences and Reservations"
+msgstr "Number Sequences and Reservations"
+
+#: inc/class-sigma-events.php:200
+#: ../sigma_events/inc/class-sigma-events.php:200
+msgid "Additional Products"
+msgstr "Additional Products"
+
+#: inc/class-sigma-events.php:209
+#: ../sigma_events/inc/class-sigma-events.php:209
+msgid "Legal Information"
+msgstr "Legal Information"
+
+#: inc/class-sigma-events.php:218
+#: ../sigma_events/inc/class-sigma-events.php:218
+msgid "Registration Email Template"
+msgstr "Registration Email Template"
+
+#: inc/class-sigma-events.php:227
+#: ../sigma_events/inc/class-sigma-events.php:227
+msgid "Payment Confirmation Email Template"
+msgstr "Payment Confirmation Email Template"
+
+#: inc/class-sigma-events.php:236
+#: ../sigma_events/inc/class-sigma-events.php:236
+msgid "Payment Page Banner"
+msgstr "Payment Page Banner"
+
+#: inc/class-sigma-events.php:268 inc/class-sigma-events.php:846
+#: ../sigma_events/inc/class-sigma-events.php:268
+#: ../sigma_events/inc/class-sigma-events.php:846
+msgid "Banner"
+msgstr "Banner"
+
+#: inc/class-sigma-events.php:279
+#: ../sigma_events/inc/class-sigma-events.php:279
+msgid "Upload Header Image"
+msgstr "Upload Header Image"
+
+#: inc/class-sigma-events.php:341
+#: ../sigma_events/inc/class-sigma-events.php:341
+msgid "Organizer Name"
+msgstr "Organizer Name"
+
+#: inc/class-sigma-events.php:344
+#: ../sigma_events/inc/class-sigma-events.php:344
+msgid "Organizer Email"
+msgstr "Organizer Email"
+
+#: inc/class-sigma-events.php:347
+#: ../sigma_events/inc/class-sigma-events.php:347
+msgid "Salesperson Email"
+msgstr "Salesperson Email"
+
+#: inc/class-sigma-events.php:350
+#: ../sigma_events/inc/class-sigma-events.php:350
+msgid "Organizer URL"
+msgstr "Organizer URL"
+
+#: inc/class-sigma-events.php:353
+#: ../sigma_events/inc/class-sigma-events.php:353
+msgid "Organizer Logo"
+msgstr "Organizer Logo"
+
+#: inc/class-sigma-events.php:363
+#: ../sigma_events/inc/class-sigma-events.php:363
+msgid "Upload Organizer Logo"
+msgstr "Upload Organizer Logo"
+
+#: inc/class-sigma-events.php:372
+#: ../sigma_events/inc/class-sigma-events.php:372
+msgid "Organizer Question"
+msgstr "Organizer Question"
+
+#: inc/class-sigma-events.php:376
+#: ../sigma_events/inc/class-sigma-events.php:376
+msgid "Above Disclaimer Text"
+msgstr "Above Disclaimer Text"
+
+#: inc/class-sigma-events.php:396
+#: ../sigma_events/inc/class-sigma-events.php:396
+msgid "Event Start Date"
+msgstr "Event Start Date"
+
+#: inc/class-sigma-events.php:399
+#: ../sigma_events/inc/class-sigma-events.php:399
+msgid "Event End Date"
+msgstr "Event End Date"
+
+#: inc/class-sigma-events.php:419 inc/class-sigma-products.php:96
+#: ../sigma_events/inc/class-sigma-events.php:419
+#: ../sigma_events/inc/class-sigma-products.php:96
+msgid "Local (ARS)"
+msgstr "Local (ARS)"
+
+#: inc/class-sigma-events.php:422 inc/class-sigma-products.php:99
+#: ../sigma_events/inc/class-sigma-events.php:422
+#: ../sigma_events/inc/class-sigma-products.php:99
+msgid "Foreign (USD)"
+msgstr "Foreign (USD)"
+
+#: inc/class-sigma-events.php:425
+#: ../sigma_events/inc/class-sigma-events.php:425
+msgid "Rate(ARS/USD)"
+msgstr "Rate(ARS/USD)"
+
+#: inc/class-sigma-events.php:480
+#: ../sigma_events/inc/class-sigma-events.php:480
+msgid "Local (ARS) Processor"
+msgstr "Local (ARS) Processor"
+
+#: inc/class-sigma-events.php:504
+#: ../sigma_events/inc/class-sigma-events.php:504
+msgid "Foreign (USD) Processor"
+msgstr "Foreign (USD) Processor"
+
+#: inc/class-sigma-events.php:675
+#: ../sigma_events/inc/class-sigma-events.php:675
+msgid "Terms and Conditions"
+msgstr "términos de uso"
+
+#: inc/class-sigma-events.php:678
+#: ../sigma_events/inc/class-sigma-events.php:678
+msgid "Privacy Policy"
+msgstr "privacidad"
+
+#: inc/class-sigma-events.php:681
+#: ../sigma_events/inc/class-sigma-events.php:681
+msgid "Organizer Terms and Conditions"
+msgstr "Organizer Terms and Conditions"
+
+#: inc/class-sigma-events.php:713 inc/class-sigma-events.php:771
+#: inc/class-sigma-products.php:127
+#: ../sigma_events/inc/class-sigma-events.php:713
+#: ../sigma_events/inc/class-sigma-events.php:771
+#: ../sigma_events/inc/class-sigma-products.php:127
+msgid "Email Subject"
+msgstr "Email Subject"
+
+#: inc/class-sigma-events.php:717 inc/class-sigma-events.php:775
+#: inc/class-sigma-products.php:131
+#: ../sigma_events/inc/class-sigma-events.php:717
+#: ../sigma_events/inc/class-sigma-events.php:775
+#: ../sigma_events/inc/class-sigma-products.php:131
+msgid "Email Attachment"
+msgstr "Email Attachment"
+
+#: inc/class-sigma-events.php:726
+#: ../sigma_events/inc/class-sigma-events.php:726
+msgid "Upload Registration Attachment"
+msgstr "Upload Registration Attachment"
+
+#: inc/class-sigma-events.php:731
+#: ../sigma_events/inc/class-sigma-events.php:731
+msgid "Registration Email Body. See help for available email template tags."
+msgstr "Registration Email Body. See help for available email template tags."
+
+#: inc/class-sigma-events.php:784 inc/class-sigma-products.php:140
+#: ../sigma_events/inc/class-sigma-events.php:784
+#: ../sigma_events/inc/class-sigma-products.php:140
+msgid "Upload Attachment"
+msgstr "Upload Attachment"
+
+#: inc/class-sigma-events.php:789
+#: ../sigma_events/inc/class-sigma-events.php:789
+msgid ""
+"Payment Approved Email Body. See help for available email template tags."
+msgstr ""
+"Payment Approved Email Body. See help for available email template tags."
+
+#: inc/class-sigma-events.php:801
+#: ../sigma_events/inc/class-sigma-events.php:801
+msgid ""
+"Payment Not Approved Email Body. See help for available email template tags."
+msgstr ""
+"Payment Not Approved Email Body. See help for available email template tags."
+
+#: inc/class-sigma-events.php:842
+#: ../sigma_events/inc/class-sigma-events.php:842
+msgid "Agent Email"
+msgstr "Agent Email"
+
+#: inc/class-sigma-events.php:856
+#: ../sigma_events/inc/class-sigma-events.php:856
+msgid "Upload Banner"
+msgstr "Upload Banner"
+
+#: inc/class-sigma-events.php:1096
+#: ../sigma_events/inc/class-sigma-events.php:1096
+msgid "Reg: Cheatin&#8217; uh?"
+msgstr "Reg: Cheatin&#8217; uh?"
+
+#: inc/class-sigma-events.php:1099
+#: ../sigma_events/inc/class-sigma-events.php:1099
+msgid "Fil: Cheatin&#8217; uh?"
+msgstr "Reg: Cheatin&#8217; uh?"
+
+#: inc/class-sigma-events.php:1103 inc/class-sigma-events.php:1641
+#: templates/sigma-tracker-template.php:78
+#: ../sigma_events/inc/class-sigma-events.php:1103
+#: ../sigma_events/inc/class-sigma-events.php:1641
+#: ../sigma_events/templates/sigma-tracker-template.php:78
+msgid "Non: Cheatin&#8217; uh?"
+msgstr "Non: Cheatin&#8217; uh?"
+
+#: inc/class-sigma-events.php:1274 inc/class-sigma-events.php:1532
+#: ../sigma_events/inc/class-sigma-events.php:1274
+#: ../sigma_events/inc/class-sigma-events.php:1532
+msgid "No registration record for the token: Cheatin&#8217; uh?"
+msgstr "No registration record for the token: Cheatin&#8217; uh?"
+
+#: inc/class-sigma-events.php:1368 templates/sigma-tracker-template.php:141
+#: ../sigma_events/inc/class-sigma-events.php:1368
+#: ../sigma_events/templates/sigma-tracker-template.php:141
+msgid "Hi, "
+msgstr "Hola,"
+
+#: inc/class-sigma-events.php:1369
+#: ../sigma_events/inc/class-sigma-events.php:1369
+msgid "<span class=\"se-token-string\" >Your Booking ID (token) is: "
+msgstr "<span class=\"se-token-string\" >Su código ID de reserva (token) es: "
+
+#: inc/class-sigma-events.php:1413 inc/class-sigma-events.php:1418
+#: inc/class-sigma-events.php:1424 inc/class-sigma-events.php:1429
+#: ../sigma_events/inc/class-sigma-events.php:1413
+#: ../sigma_events/inc/class-sigma-events.php:1418
+#: ../sigma_events/inc/class-sigma-events.php:1424
+#: ../sigma_events/inc/class-sigma-events.php:1429
+msgid "Event Price: "
+msgstr "Costo del evento:"
+
+#: inc/class-sigma-events.php:1415 inc/class-sigma-events.php:1426
+#: ../sigma_events/inc/class-sigma-events.php:1415
+#: ../sigma_events/inc/class-sigma-events.php:1426
+msgid "<span class=\"se-reservation-fee\">  + Number Reservation Fee: "
+msgstr "<span class=\"se-reservation-fee\">  + Adicional reserva de dorsal: "
+
+#: inc/class-sigma-events.php:1418 inc/class-sigma-events.php:1429
+#: ../sigma_events/inc/class-sigma-events.php:1418
+#: ../sigma_events/inc/class-sigma-events.php:1429
+msgid "free"
+msgstr "adicional"
+
+#: inc/class-sigma-events.php:1508
+#: ../sigma_events/inc/class-sigma-events.php:1508
+msgid "No Event Assoicated with your Token"
+msgstr "No Event Assoicated with your Token"
+
+#: inc/class-sigma-events.php:1525
+#: ../sigma_events/inc/class-sigma-events.php:1525
+msgid "Tok: Cheatin&#8217; uh?"
+msgstr "Tok: Cheatin&#8217; uh?"
+
+#: inc/class-sigma-events.php:1646
+#: ../sigma_events/inc/class-sigma-events.php:1646
+msgid "Invalid Processor: Cheatin&#8217; uh?"
+msgstr "Invalid Processor: Cheatin&#8217; uh?"
+
+#: inc/class-sigma-events.php:1681
+#: ../sigma_events/inc/class-sigma-events.php:1681
+msgid "Med: Cheatin&#8217; uh?"
+msgstr "Invalid Processor: Cheatin&#8217; uh?"
+
+#: inc/class-sigma-events.php:2004
+#: ../sigma_events/inc/class-sigma-events.php:2004
+msgid "Fill your first name"
+msgstr "Ingrese su nombre"
+
+#: inc/class-sigma-events.php:2005
+#: ../sigma_events/inc/class-sigma-events.php:2005
+msgid "Fill your last name"
+msgstr "Ingrese su apellido"
+
+#: inc/class-sigma-events.php:2006
+#: ../sigma_events/inc/class-sigma-events.php:2006
+msgid "Fill your DNI"
+msgstr "Ingrese su DNI"
+
+#: inc/class-sigma-events.php:2007
+#: ../sigma_events/inc/class-sigma-events.php:2007
+msgid "Fill your birthdate"
+msgstr "Ingrese su fecha de nacimiento"
+
+#: inc/class-sigma-events.php:2008
+#: ../sigma_events/inc/class-sigma-events.php:2008
+msgid "Check the year of birth"
+msgstr "Verifique su fecha de nacimiento"
+
+#: inc/class-sigma-events.php:2009
+#: ../sigma_events/inc/class-sigma-events.php:2009
+msgid "Select your gender"
+msgstr "Seleecione una opción"
+
+#: inc/class-sigma-events.php:2010
+#: ../sigma_events/inc/class-sigma-events.php:2010
+msgid "Fill your email"
+msgstr "Ingrese su email"
+
+#: inc/class-sigma-events.php:2011
+#: ../sigma_events/inc/class-sigma-events.php:2011
+msgid "Select your country."
+msgstr "Seleccione su país"
+
+#: inc/class-sigma-events.php:2012
+#: ../sigma_events/inc/class-sigma-events.php:2012
+msgid "Select your nationality."
+msgstr "Seleccione su nacionalidad"
+
+#: inc/class-sigma-products.php:43
+#: ../sigma_events/inc/class-sigma-products.php:43
+msgid "Products"
+msgstr "Productos"
+
+#: inc/class-sigma-products.php:44
+#: ../sigma_events/inc/class-sigma-products.php:44
+msgid "Product"
+msgstr "Productos"
+
+#: inc/class-sigma-products.php:45
+#: ../sigma_events/inc/class-sigma-products.php:45
+msgid "Add Product"
+msgstr "Add Product"
+
+#: inc/class-sigma-products.php:46
+#: ../sigma_events/inc/class-sigma-products.php:46
+msgid "Add New Product"
+msgstr "Add New Product"
+
+#: inc/class-sigma-products.php:47
+#: ../sigma_events/inc/class-sigma-products.php:47
+msgid "Edit Product"
+msgstr "Edit Product"
+
+#: inc/class-sigma-products.php:66
+#: ../sigma_events/inc/class-sigma-products.php:66
+msgid "Product Price"
+msgstr "Product Price"
+
+#: inc/class-sigma-products.php:74
+#: ../sigma_events/inc/class-sigma-products.php:74
+msgid "Email Template"
+msgstr "Email Template"
+
+#: inc/class-sigma-products.php:145
+#: ../sigma_events/inc/class-sigma-products.php:145
+msgid "Product Email Body. See help for available email template tags."
+msgstr "Product Email Body. See help for available email template tags."
+
+#: inc/class-sigma-sequences.php:46
+#: ../sigma_events/inc/class-sigma-sequences.php:46
+msgid "Sequences"
+msgstr "Sequences"
+
+#: inc/class-sigma-sequences.php:47
+#: ../sigma_events/inc/class-sigma-sequences.php:47
+msgid "Sequence"
+msgstr "Sequence"
+
+#: inc/class-sigma-sequences.php:48
+#: ../sigma_events/inc/class-sigma-sequences.php:48
+msgid "Add Sequence"
+msgstr "Add Sequence"
+
+#: inc/class-sigma-sequences.php:49
+#: ../sigma_events/inc/class-sigma-sequences.php:49
+msgid "Add New Sequence"
+msgstr "Add New Sequence"
+
+#: inc/class-sigma-sequences.php:50
+#: ../sigma_events/inc/class-sigma-sequences.php:50
+msgid "Edit Sequence"
+msgstr "Edit Sequence"
+
+#: inc/class-sigma-sequences.php:72
+#: ../sigma_events/inc/class-sigma-sequences.php:72
+msgid "Starting and Ending Numbers"
+msgstr "Starting and Ending Numbers"
+
+#: inc/class-sigma-sequences.php:83
+#: ../sigma_events/inc/class-sigma-sequences.php:83
+msgid "Current Sequences"
+msgstr "Current Sequences"
+
+#: inc/class-sigma-sequences.php:94
+#: ../sigma_events/inc/class-sigma-sequences.php:94
+msgid "Reserved and Returned Numbers"
+msgstr "Reserved and Returned Numbers"
+
+#: inc/class-sigma-sequences.php:105
+#: ../sigma_events/inc/class-sigma-sequences.php:105
+msgid "Latest Assignements in this Sequence"
+msgstr "Latest Assignements in this Sequence"
+
+#: inc/class-sigma-sequences.php:116
+#: ../sigma_events/inc/class-sigma-sequences.php:116
+msgid "Edit Sequence State"
+msgstr "Edit Sequence State"
+
+#: inc/class-sigma-sequences.php:141
+#: ../sigma_events/inc/class-sigma-sequences.php:141
+msgid "Starting Number"
+msgstr "Starting Number"
+
+#: inc/class-sigma-sequences.php:143
+#: ../sigma_events/inc/class-sigma-sequences.php:143
+msgid "End Number"
+msgstr "End Number"
+
+#: inc/class-sigma-tourist-agent.php:55
+#: ../sigma_events/inc/class-sigma-tourist-agent.php:55
+msgid "t-Events"
+msgstr "t-Events"
+
+#: inc/class-sigma-tourist-agent.php:56
+#: ../sigma_events/inc/class-sigma-tourist-agent.php:56
+msgid "t-Event"
+msgstr "t-Event"
+
+#: inc/class-sigma-tourist-agent.php:57
+#: ../sigma_events/inc/class-sigma-tourist-agent.php:57
+msgid "Add t-Event"
+msgstr "Add t-Event"
+
+#: inc/class-sigma-tourist-agent.php:58
+#: ../sigma_events/inc/class-sigma-tourist-agent.php:58
+msgid "Add New t-Event"
+msgstr "Add New t-Event"
+
+#: inc/class-sigma-tourist-agent.php:59
+#: ../sigma_events/inc/class-sigma-tourist-agent.php:59
+msgid "Edit t-Event"
+msgstr "Edit t-Event"
+
+#: inc/class-sigma-tourist-agent.php:78
+#: ../sigma_events/inc/class-sigma-tourist-agent.php:78
+msgid "Manage t-Event"
+msgstr "Manage t-Event"
+
+#: inc/class-sigma-tourist-agent.php:86
+#: ../sigma_events/inc/class-sigma-tourist-agent.php:86
+msgid "Recent t-Event Updates"
+msgstr "Recent t-Event Updates"
+
+#: inc/class-sigma-tourist-agent.php:113
+#: ../sigma_events/inc/class-sigma-tourist-agent.php:113
+msgid "t-Event Original Event"
+msgstr "t-Event Original Event"
+
+#: inc/class-sigma-tourist-agent.php:115
+#: ../sigma_events/inc/class-sigma-tourist-agent.php:115
+msgid "t-Event Password"
+msgstr "t-Event Password"
+
+#: inc/class-sigma-tourist-agent.php:117
+#: ../sigma_events/inc/class-sigma-tourist-agent.php:117
+msgid "t-Event Token Suffix"
+msgstr "t-Event Token Suffix"
+
+#: templates/sigma-confirmation-template.php:80
+#: templates/sigma-events-template.php:64
+#: templates/sigma-payments-template.php:37
+#: templates/sigma-tracker-template.php:119
+#: ../sigma_events/templates/sigma-confirmation-template.php:80
+#: ../sigma_events/templates/sigma-events-template.php:64
+#: ../sigma_events/templates/sigma-payments-template.php:37
+#: ../sigma_events/templates/sigma-tracker-template.php:119
+msgid "Organized by: "
+msgstr "Organizado por:"
+
+#: templates/sigma-confirmation-template.php:86
+#: templates/sigma-events-template.php:70
+#: templates/sigma-payments-template.php:43
+#: templates/sigma-tracker-template.php:125
+#: ../sigma_events/templates/sigma-confirmation-template.php:86
+#: ../sigma_events/templates/sigma-events-template.php:70
+#: ../sigma_events/templates/sigma-payments-template.php:43
+#: ../sigma_events/templates/sigma-tracker-template.php:125
+msgid "Visit Event Organizer Site"
+msgstr "Sitio web del organizador"
+
+#: templates/sigma-confirmation-template.php:87
+#: templates/sigma-events-template.php:71
+#: templates/sigma-payments-template.php:44
+#: templates/sigma-tracker-template.php:126
+#: ../sigma_events/templates/sigma-confirmation-template.php:87
+#: ../sigma_events/templates/sigma-events-template.php:71
+#: ../sigma_events/templates/sigma-payments-template.php:44
+#: ../sigma_events/templates/sigma-tracker-template.php:126
+msgid "Visit Organizer Site"
+msgstr "Sitio web del organizador"
+
+#: templates/sigma-confirmation-template.php:92
+#: templates/sigma-events-template.php:76
+#: templates/sigma-payments-template.php:49
+#: templates/sigma-tracker-template.php:131
+#: ../sigma_events/templates/sigma-confirmation-template.php:92
+#: ../sigma_events/templates/sigma-events-template.php:76
+#: ../sigma_events/templates/sigma-payments-template.php:49
+#: ../sigma_events/templates/sigma-tracker-template.php:131
+msgid "Booking for this event will be finalized on: "
+msgstr "La inscripción finaliza el:"
+
+#: templates/sigma-events-template.php:39
+#: ../sigma_events/templates/sigma-events-template.php:39
+msgid "Future Event. Registration is not available yet."
+msgstr "Todavía no puede inscribirse para este evento."
+
+#: templates/sigma-events-template.php:43
+#: ../sigma_events/templates/sigma-events-template.php:43
+msgid "Past Event. Registration is not allowed now."
+msgstr "La inscripción se encuentra finalizada."
+
+#: templates/sigma-events-template.php:88
+#: templates/sigma-tracker-template.php:42
+#: ../sigma_events/templates/sigma-events-template.php:88
+#: ../sigma_events/templates/sigma-tracker-template.php:42
+msgid "Enter First Name: "
+msgstr "Ingrese su Nombre: "
+
+#: templates/sigma-events-template.php:92
+#: templates/sigma-tracker-template.php:46
+#: ../sigma_events/templates/sigma-events-template.php:92
+#: ../sigma_events/templates/sigma-tracker-template.php:46
+msgid "Enter Last Name: "
+msgstr "Ingrese su apellido: "
+
+#: templates/sigma-events-template.php:104
+#: templates/sigma-profile-template.php:14
+#: ../sigma_events/templates/sigma-events-template.php:104
+#: ../sigma_events/templates/sigma-profile-template.php:14
+msgid "First Name: "
+msgstr "Nombre: "
+
+#: templates/sigma-events-template.php:110
+#: templates/sigma-profile-template.php:20
+#: ../sigma_events/templates/sigma-events-template.php:110
+#: ../sigma_events/templates/sigma-profile-template.php:20
+msgid "Last Name: "
+msgstr "Apellido: "
+
+#: templates/sigma-events-template.php:116
+#: templates/sigma-profile-template.php:30
+#: ../sigma_events/templates/sigma-events-template.php:116
+#: ../sigma_events/templates/sigma-profile-template.php:30
+msgid "Nationality: "
+msgstr "Nacionalidad: "
+
+#: templates/sigma-events-template.php:356
+#: ../sigma_events/templates/sigma-events-template.php:356
+msgid "I'm resident of Argentina"
+msgstr "Soy residente de Argentina"
+
+#: templates/sigma-events-template.php:361
+#: templates/sigma-profile-template.php:39
+#: ../sigma_events/templates/sigma-events-template.php:361
+#: ../sigma_events/templates/sigma-profile-template.php:39
+msgid "DNI/Passport Number: "
+msgstr "Pasaporte/DNI:"
+
+#: templates/sigma-events-template.php:367
+#: templates/sigma-profile-template.php:45
+#: ../sigma_events/templates/sigma-events-template.php:367
+#: ../sigma_events/templates/sigma-profile-template.php:45
+msgid "Email Address: "
+msgstr "Email (obligatorio): "
+
+#: templates/sigma-events-template.php:373
+#: templates/sigma-profile-template.php:51
+#: ../sigma_events/templates/sigma-events-template.php:373
+#: ../sigma_events/templates/sigma-profile-template.php:51
+msgid "Gender: "
+msgstr "Sexo: "
+
+#: templates/sigma-events-template.php:375
+#: ../sigma_events/templates/sigma-events-template.php:375
+msgid "Select"
+msgstr "Seleccionar"
+
+#: templates/sigma-events-template.php:376
+#: ../sigma_events/templates/sigma-events-template.php:376
+msgid "Male"
+msgstr "Masculino"
+
+#: templates/sigma-events-template.php:377
+#: ../sigma_events/templates/sigma-events-template.php:377
+msgid "Female"
+msgstr "Femenino"
+
+#: templates/sigma-events-template.php:383
+#: templates/sigma-profile-template.php:57
+#: ../sigma_events/templates/sigma-events-template.php:383
+#: ../sigma_events/templates/sigma-profile-template.php:57
+msgid "Birth Date: "
+msgstr "Fecha de Nacimiento: "
+
+#: templates/sigma-events-template.php:389
+#: templates/sigma-profile-template.php:63
+#: ../sigma_events/templates/sigma-events-template.php:389
+#: ../sigma_events/templates/sigma-profile-template.php:63
+msgid "Telephone Number: "
+msgstr "Número de Teléfono: "
+
+#: templates/sigma-events-template.php:395
+#: templates/sigma-profile-template.php:69
+#: ../sigma_events/templates/sigma-events-template.php:395
+#: ../sigma_events/templates/sigma-profile-template.php:69
+msgid "Full Address (incl. District/Province): "
+msgstr "Dirección (Calle, Municipio, Provincia): "
+
+#: templates/sigma-events-template.php:401
+#: templates/sigma-profile-template.php:75
+#: ../sigma_events/templates/sigma-events-template.php:401
+#: ../sigma_events/templates/sigma-profile-template.php:75
+msgid "Running Team: "
+msgstr "Running Team: "
+
+#: templates/sigma-events-template.php:408
+#: ../sigma_events/templates/sigma-events-template.php:408
+msgid "Discount Code(optional): "
+msgstr "Código RTeam (opcional):"
+
+#: templates/sigma-events-template.php:444
+#: ../sigma_events/templates/sigma-events-template.php:444
+msgid "By clicking \"Book for this event\" button below, you are accepting"
+msgstr ""
+"Al clickear el botón \"Inscribirme para este evento\", usted acepta los"
+
+#: templates/sigma-events-template.php:446
+#: ../sigma_events/templates/sigma-events-template.php:446
+msgid "terms and conditions"
+msgstr "términos de uso"
+
+#: templates/sigma-events-template.php:448
+#: ../sigma_events/templates/sigma-events-template.php:448
+msgid "privacy policy"
+msgstr "privacidad"
+
+#: templates/sigma-events-template.php:448
+#: ../sigma_events/templates/sigma-events-template.php:448
+msgid "and"
+msgstr "y"
+
+#: templates/sigma-events-template.php:450
+#: ../sigma_events/templates/sigma-events-template.php:450
+msgid "event organizer terms and conditions"
+msgstr "reglamento del evento"
+
+#: templates/sigma-events-template.php:454
+#: ../sigma_events/templates/sigma-events-template.php:454
+msgid "Book for this event"
+msgstr "Inscribirme para este evento"
+
+#: templates/sigma-forget-code.php:12
+#: ../sigma_events/templates/sigma-forget-code.php:12
+msgid "Retrive the Code by Email"
+msgstr "Recuperar mi código por Email"
+
+#: templates/sigma-forget-code.php:14
+#: ../sigma_events/templates/sigma-forget-code.php:14
+msgid "Enter your email address to retrieve your code back."
+msgstr "Ingrese la dirección de email con la que se registró."
+
+#: templates/sigma-payments-template.php:112
+#: ../sigma_events/templates/sigma-payments-template.php:112
+msgid "Select a Payment Method"
+msgstr "Seleccione un medio de pago"
+
+#: templates/sigma-payments-template.php:117
+#: templates/sigma-payments-template.php:123
+#: ../sigma_events/templates/sigma-payments-template.php:117
+#: ../sigma_events/templates/sigma-payments-template.php:123
+msgid " Credit Cards"
+msgstr "Tarjetas de Crédito"
+
+#: templates/sigma-payments-template.php:129
+#: ../sigma_events/templates/sigma-payments-template.php:129
+msgid " Dineromail"
+msgstr "Dineromail"
+
+#: templates/sigma-payments-template.php:135
+#: ../sigma_events/templates/sigma-payments-template.php:135
+msgid " Pay Cash"
+msgstr "Pago en efectivo"
+
+#: templates/sigma-payments-template.php:141
+#: ../sigma_events/templates/sigma-payments-template.php:141
+msgid " Salesperson"
+msgstr "Vendedor"
+
+#: templates/sigma-payments-template.php:153
+#: templates/sigma-payments-template.php:163
+#: templates/sigma-payments-template.php:182
+#: ../sigma_events/templates/sigma-payments-template.php:153
+#: ../sigma_events/templates/sigma-payments-template.php:163
+#: ../sigma_events/templates/sigma-payments-template.php:182
+msgid "Payment Options"
+msgstr "Opciones de Pago"
+
+#: templates/sigma-payments-template.php:170
+#: ../sigma_events/templates/sigma-payments-template.php:170
+msgid "Payment through our Agent (Salesperson)"
+msgstr "Pago personalidado a través de un vendedor"
+
+#: templates/sigma-payments-template.php:176
+#: ../sigma_events/templates/sigma-payments-template.php:176
+msgid "Print barcode to pay cash"
+msgstr "Imprimir cupón para pago en efectivo"
+
+#: templates/sigma-payments-template.php:202
+#: ../sigma_events/templates/sigma-payments-template.php:202
+msgid "Proceed"
+msgstr "Continuar"
+
+#: templates/sigma-products-template.php:52
+#: ../sigma_events/templates/sigma-products-template.php:52
+msgid "Back to checkout"
+msgstr "Volver a la página anterior"
+
+#: templates/sigma-tracker-template.php:33
+#: ../sigma_events/templates/sigma-tracker-template.php:33
+msgid "Sigma Payment Tracker"
+msgstr "Sigma Payment Tracker"
+
+#: templates/sigma-tracker-template.php:34
+#: ../sigma_events/templates/sigma-tracker-template.php:34
+msgid ""
+"Enter your Unique Booking ID code to the below box, to view the payment "
+"status."
+msgstr ""
+"Ingrese su código ID de Inscripción en el cuadro siguiente para conocer el "
+"estado de su pago."
+
+#: templates/sigma-tracker-template.php:57
+#: ../sigma_events/templates/sigma-tracker-template.php:57
+msgid "Enter your Booking ID (token) code: "
+msgstr "Ingrese su código ID de Inscripción (token): "
+
+#: templates/sigma-tracker-template.php:63
+#: ../sigma_events/templates/sigma-tracker-template.php:63
+msgid "View Payment Status"
+msgstr "Chequear el estado de mi inscripción"
+
+#: templates/sigma-tracker-template.php:64
+#: ../sigma_events/templates/sigma-tracker-template.php:64
+msgid "I don't remember my ID and want to retrieve"
+msgstr "No recuerdo mi ID y quiero recuperarlo"
+
+#: templates/sigma-tracker-template.php:68
+#: ../sigma_events/templates/sigma-tracker-template.php:68
+msgid "Sigma Tracker is not available."
+msgstr "El sistema de trackeo no se encuentra disponible."
+
+#: templates/sigma-tracker-template.php:74
+#: ../sigma_events/templates/sigma-tracker-template.php:74
+msgid "Rob: Cheatin&#8217; uh?"
+msgstr "Rob: Cheatin&#8217; uh?"
+
+#: templates/sigma-tracker-template.php:85
+#: ../sigma_events/templates/sigma-tracker-template.php:85
+msgid "Are you sure?"
+msgstr "Está seguro?"
+
+#: templates/sigma-tracker-template.php:86
+#: ../sigma_events/templates/sigma-tracker-template.php:86
+msgid "The Transaction ID you entered"
+msgstr "El código ID de inscripción que ingresó"
+
+#: templates/sigma-tracker-template.php:88
+#: ../sigma_events/templates/sigma-tracker-template.php:88
+msgid "doesn't exist!"
+msgstr "no existe."
+
+#: templates/sigma-tracker-template.php:89
+#: ../sigma_events/templates/sigma-tracker-template.php:89
+msgid "Make sure you did not input any space. Please try again."
+msgstr ""
+"Asegúrese de no haber ingresado ningún espacio. Por favor vuelva a intentar."
+
+#: templates/sigma-tracker-template.php:90
+#: ../sigma_events/templates/sigma-tracker-template.php:90
+msgid "Receive code and the other details via email."
+msgstr "Recibir código y otros detalles por email."
+
+#: templates/sigma-tracker-template.php:146
+#: templates/sigma-tracker-template.php:159
+#: templates/sigma-tracker-template.php:179
+#: ../sigma_events/templates/sigma-tracker-template.php:146
+#: ../sigma_events/templates/sigma-tracker-template.php:159
+#: ../sigma_events/templates/sigma-tracker-template.php:179
+msgid "Your booking"
+msgstr "Su inscripción"
+
+#: templates/sigma-tracker-template.php:147
+#: templates/sigma-tracker-template.php:160
+#: ../sigma_events/templates/sigma-tracker-template.php:147
+#: ../sigma_events/templates/sigma-tracker-template.php:160
+msgid "ID: "
+msgstr "ID: "
+
+#: templates/sigma-tracker-template.php:148
+#: ../sigma_events/templates/sigma-tracker-template.php:148
+msgid "has been <b>confirmed</b>"
+msgstr "ha sido <b>confirmada</b>"
+
+#: templates/sigma-tracker-template.php:153
+#: ../sigma_events/templates/sigma-tracker-template.php:153
+msgid "Your Sequence Number is "
+msgstr "Su número (dorsal) es "
+
+#: templates/sigma-tracker-template.php:161
+#: ../sigma_events/templates/sigma-tracker-template.php:161
+msgid "has <b>NOT</b> been processed yet."
+msgstr "<b>NO</b> ha sido pocesada todavía."
+
+#: templates/sigma-tracker-template.php:163
+#: ../sigma_events/templates/sigma-tracker-template.php:163
+msgid ""
+"International payments can take few days to update, if you paid please check "
+"back later and do not attempt to pay again."
+msgstr ""
+"Los pagos internacionales pueden tardar varios días en ser confirmados, si "
+"usted pagó, por favor verifique más tarde y no intente pagar nuevamente."
+
+#: templates/sigma-tracker-template.php:172
+#: ../sigma_events/templates/sigma-tracker-template.php:172
+msgid "Note:"
+msgstr "Nota:"
+
+#: templates/sigma-tracker-template.php:173
+#: ../sigma_events/templates/sigma-tracker-template.php:173
+msgid ""
+"If you was't able to complete the payment for some reason, you can resume "
+"your payment."
+msgstr ""
+"Si por alguna razón no pudo completar su pago, puede reanudar el proceso de "
+"pago ahora."
+
+#: templates/sigma-tracker-template.php:176
+#: ../sigma_events/templates/sigma-tracker-template.php:176
+msgid "Resume Payment"
+msgstr "Reanudar el pago"
+
+#: templates/sigma-tracker-template.php:180
+#: ../sigma_events/templates/sigma-tracker-template.php:180
+msgid "ID:"
+msgstr "ID:"
+
+#: templates/sigma-tracker-template.php:181
+#: ../sigma_events/templates/sigma-tracker-template.php:181
+msgid "has been <b>confirmed</b>."
+msgstr "ha sido <b>confirmado</b>."
+
+#: templates/sigma-tracker-template.php:186
+#: ../sigma_events/templates/sigma-tracker-template.php:186
+msgid "Your Sequence (bib) Number is "
+msgstr "Su número (dorsal) es "
+
+#: templates/sigma-tracker-template.php:192
+#: ../sigma_events/templates/sigma-tracker-template.php:192
+msgid "Print this page"
+msgstr "Imprimir estos datos"
+
+#~ msgid "Get Registration Record"
+#~ msgstr "Get Registration Record"
+
+#~ msgid "Configure Dineromail Settings"
+#~ msgstr "Configure Dineromail Settings"
+
+#~ msgid "Configure Decidir Settings"
+#~ msgstr "Configure Decidir Settings"
+
+#~ msgid "Log Dineromail POSTs."
+#~ msgstr "Log Dineromail POSTs."
+
+#~ msgid "Log all POSTs to Dineromail Endpoint to a file."
+#~ msgstr "Log all POSTs to Dineromail Endpoint to a file."
+
+#~ msgid "Log Decidir POSTs."
+#~ msgstr "Log Decidir POSTs."
+
+#~ msgid "Log all POSTs to Decidir Endpoint to file."
+#~ msgstr "Log all POSTs to Decidir Endpoint to file."
+
+#~ msgid "Restrict POST IP"
+#~ msgstr "Restrict POST IP"
+
+#~ msgid "Your payment"
+#~ msgstr "Su pago"
+
+#~ msgid "Your registration"
+#~ msgstr "Su registro"
+
+#~ msgid "Full Address: "
+#~ msgstr "Domicilio (Calle, Localidad, Provincia):"
+
+#~ msgid "Club Name: "
+#~ msgstr "Running Team: "

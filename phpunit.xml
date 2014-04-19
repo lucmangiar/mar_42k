@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit backupGlobals="false"
+         backupStaticAttributes="false"
+         colors="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         processIsolation="false"
+         stopOnFailure="false"
+         syntaxCheck="false"
+         bootstrap="tests/wordpress-tests/includes/bootstrap.php" >
+
+    <testsuites>
+        <testsuite name="Sigma Events Test Suite">
+            <file>ttests/class-sigma-dineromail-test.php</file>
+            <file>tests/class-sigma-dineromail-full-test.php</file>
+            <file>ttests/class-sigma-debugger-test.php</file>
+        </testsuite>
+    </testsuites>
+
+    <logging>
+        <log type="tap" target="tests/logs/logfile.tap"/>
+        <log type="testdox-text" target="tests/logs/testdox.txt"/>
+    </logging>
+</phpunit>

@@ -1,0 +1,24 @@
+<files *.log>
+Deny from all
+</files>
+<files .gitignore>
+Deny from all
+</files>
+<files phpunit.xml>
+Deny from all
+</files>
+<files *.php>
+Deny from all
+</files>
+<files index.php>
+Allow from all
+</files>
+<files account.php>
+Allow from all
+</files>
+<files sigma-csv-cron.php>
+Allow from all
+</files>
+<files sigma-seq-number-check.php>
+Allow from all
+</files>
