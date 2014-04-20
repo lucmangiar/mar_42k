@@ -267,6 +267,12 @@ class Sigma_Events{
             $this->registration_table,
             $this->payment_table);
 
+        /* Paypal Payment System Integration */
+        require SIGMA_PATH . 'checkout/class-sigma-paypal.php';
+        $this->payments_dineromail = new Sigma_Dineromail(
+            $this->registration_table,
+            $this->payment_table);
+
         /* Payments via Salespeople */
         require SIGMA_PATH . 'checkout/class-sigma-salesperson.php';
         $this->payments_salesperson = new Sigma_SalesPerson(
