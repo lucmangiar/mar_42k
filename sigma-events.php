@@ -269,7 +269,7 @@ class Sigma_Events{
 
         /* Paypal Payment System Integration */
         require SIGMA_PATH . 'checkout/class-sigma-paypal.php';
-        $this->payments_dineromail = new Sigma_Dineromail(
+        $this->payments_paypal = new Sigma_Dineromail(
             $this->registration_table,
             $this->payment_table);
 

@@ -129,6 +129,12 @@ echo '<div class="se-wrapper se-payments-wrapper" >';
                 checked( $event_data['processor'], 'dineromail' , false )  . ' >' . __( ' Credit Cards', 'se') . '<span    id="se-dineromail-logo" ></span></p>';
             endif;
 
+            // Paypal
+            if( $event_data['freedom']['paypal']  || 'paypal' == $event_data['processor'] ):
+                echo '<p class="se-processor-box"><input id="paypal" type="radio" value="paypal" name="payment_processor" ' .
+                    checked( $event_data['processor'], 'paypal' , false )  . ' >' . __( ' Paypal', 'se') . '<span    id="paypal-logo" ></span></p>';
+            endif;
+
             // CuentaDigital
             if( $event_data['freedom']['cuentadigital']  || 'cuentadigital' == $event_data['processor'] ):
                 echo '<p class="se-processor-box"><input id="cuentadigital" type="radio" value="cuentadigital" name="payment_processor" ' .
