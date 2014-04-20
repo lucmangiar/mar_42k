@@ -1,12 +1,6 @@
 <?php
-/**
- */
 
-if ( !class_exists('Sigma_PayPal') ) :
-/**
- */
-class Sigma_PayPal extends Sigma_Payment_Processor
-{
+class Sigma_PayPal extends Sigma_Payment_Processor {
     /**
      * Sigma Registration Table Name
      *
@@ -71,24 +65,6 @@ class Sigma_PayPal extends Sigma_Payment_Processor
     //private $decidir_url = 'https://sps.decidir.com/sps-ar/Validar';
     // TODO definir esto
     private $paypal_url = '';
-
-    /**
-     * Decidir Endpoint to receive Payment data from Decidir
-     *
-     * @var string
-     */
-    // TODO definir esto
-    //private $decidir_endpoint = 'post_decidir_sps';
-    private $paypal_endpoint = 'post_decidir_sps';
-
-    /**
-     * Decidir Shop Number
-     *
-     * @var string
-     */
-    // TODO definir esto
-    //private $shop_number = '00010409';
-    private $shop_number = '';
 
     /**
      * Construct the Decidir Payment Processor Object
@@ -425,5 +401,3 @@ class Sigma_PayPal extends Sigma_Payment_Processor
         return $this->paypal_endpoint;
     }
 }
-endif;
-?>
