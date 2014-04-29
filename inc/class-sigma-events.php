@@ -542,6 +542,7 @@ class Sigma_Event{
             <option value='salesperson' " . selected( $processor['local'], 'salesperson' , false ) . ">Salesperson</option>
             <option value='cuentadigital' " . selected( $processor['local'], 'cuentadigital' , false ) . ">CuentaDigital</option>
             <option value='ep' " . selected( $processor['local'], 'ep' , false ) . ">EasyPlanners</option>
+            <option value='paypal'" . selected( $processor['local'], 'paypal', false ) . ">Paypal</option>
             </select>
             </td></tr>
             <tr><td></td><td>Additional Processors for Locals</td></tr>
@@ -555,6 +556,8 @@ class Sigma_Event{
             <input name='localprocessorcuentadigital' type='checkbox' " . checked( $processor['local_cuentadigital'], true , false ) . ">CuentaDigital
             </td></td><tr><td></td><td>
             <input name='localprocessorep' type='checkbox' " . checked( $processor['local_ep'], true , false ) . ">EasyPlanners
+            </td></td><tr><td></td><td>
+            <input name='localpaypalrep' type='checkbox' " . checked( $processor['local_paypal'], true , false ) . ">Paypal
             </td></tr>";
 
         $output .= '<tr><td colspan="2" style="padding-top: 20px;" ><b>Foreign Payment Processing</b></td></tr>';
@@ -566,6 +569,7 @@ class Sigma_Event{
             <option value='salesperson' " . selected( $processor['foreign'], 'salesperson' , false ) . ">Salesperson</option>
             <option value='cuentadigital' " . selected( $processor['foreign'], 'cuentadigital' , false ) . ">CuentaDigital</option>
             <option value='ep' " . selected( $processor['foreign'], 'ep' , false ) . ">EasyPlanners</option>
+            <option value='paypal'" . selected( $processor['local'], 'paypal', false ) . ">Paypal</option>
             </select>
             </td></tr>
             <tr><td></td><td>Additional Processors for Foreigners</td></tr>
@@ -579,6 +583,8 @@ class Sigma_Event{
             <input name='foreignprocessorcuentadigital' type='checkbox' " . checked( $processor['foreign_cuentadigital'], true , false ) . ">CuentaDigital
             </td></td><tr><td></td><td>
             <input name='foreignprocessorep' type='checkbox' " . checked( $processor['foreign_ep'], true , false ) . ">EasyPlanners
+            </td></td><tr><td></td><td>
+            <input name='foreignpaypalrep' type='checkbox' " . checked( $processor['foreign_paypal'], true , false ) . ">Paypal
             </td></tr>";
 
         $output .= '</table>';
