@@ -569,7 +569,7 @@ class Sigma_Event{
             <option value='salesperson' " . selected( $processor['foreign'], 'salesperson' , false ) . ">Salesperson</option>
             <option value='cuentadigital' " . selected( $processor['foreign'], 'cuentadigital' , false ) . ">CuentaDigital</option>
             <option value='ep' " . selected( $processor['foreign'], 'ep' , false ) . ">EasyPlanners</option>
-            <option value='paypal'" . selected( $processor['local'], 'paypal', false ) . ">Paypal</option>
+            <option value='paypal'" . selected( $processor['foreign'], 'paypal', false ) . ">Paypal</option>
             </select>
             </td></tr>
             <tr><td></td><td>Additional Processors for Foreigners</td></tr>

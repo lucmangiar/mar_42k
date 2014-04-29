@@ -97,7 +97,10 @@ class Sigma_PayPal extends Sigma_Payment_Processor {
      * Get Decidir Checkout Form
      *
      * This form displays the final confirmation message to the customer,
-     * with a button to proceed to Decidir SPS.
+     * with a button to proceed to Paypal.
+     * IMPORTANT: This method only constructs the form, does not make any logic or POST method
+     *
+     * TODO Lucho: Ver bien los parametros que necesita Paypal y armar el form correspondiente
      *
      * @param   string   $operation_number   Registration Token
      * @param   string   $amount             Event Price + Additional Products Price
@@ -153,7 +156,7 @@ class Sigma_PayPal extends Sigma_Payment_Processor {
     }
 
     /**
-     * Decidir Rewrite
+     * Paypal Rewrite
      *
      * Add rewrite rule to handle POSTs from Paypal.
      */
