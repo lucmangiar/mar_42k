@@ -132,7 +132,7 @@ echo '<div class="se-wrapper se-payments-wrapper" >';
             // Paypal
             if( $event_data['freedom']['paypal']  || 'paypal' == $event_data['processor'] ):
                 echo '<p class="se-processor-box"><input id="paypal" type="radio" value="paypal" name="payment_processor" ' .
-                    checked( $event_data['processor'], 'paypal' , false )  . ' >' . __( ' Paypal', 'se') . '<span    id="paypal-logo" ></span></p>';
+                    checked( $event_data['processor'], 'paypal' , false )  . ' >' . __( ' Paypal', 'se') . '<span    id="se-paypal-logo" ></span></p>';
             endif;
 
             // CuentaDigital

@@ -317,13 +317,22 @@ form div {
 	background-repeat: no-repeat;
 }
 
-#se-cuentadigital-logo{
+#se-paypal-logo{
 	width: 200px;
 	height: 60px;
 	display: block;
 	margin-top: 4px;
-	background-image: url('../assets/cuentadigital-logo.png');
+	background-image: url('../assets/paypal-logo.png');
 	background-repeat: no-repeat;
+}
+
+#se-cuentadigital-logo{
+    width: 200px;
+    height: 60px;
+    display: block;
+    margin-top: 4px;
+    background-image: url('../assets/cuentadigital-logo.png');
+    background-repeat: no-repeat;
 }
 
 #se-salesperson-logo{
