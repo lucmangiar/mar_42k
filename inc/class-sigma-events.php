@@ -999,6 +999,7 @@ class Sigma_Event{
         $processor['local_salesperson']    = isset($_POST['localprocessorsalesperson']) ? true : false;
         $processor['local_cuentadigital']  = isset($_POST['localprocessorcuentadigital']) ? true : false;
         $processor['local_ep']             = isset($_POST['localprocessorep']) ? true : false;
+        $processor['local_paypal']         = isset($_POST['localprocessorpaypal']) ? true : false;
 
         $processor['foreign']                = sanitize_text_field($_POST['foreignprocessor']);
         $processor['foreign_decidir']        = isset($_POST['foreignprocessordecidir']) ? true : false;
@@ -1006,6 +1007,7 @@ class Sigma_Event{
         $processor['foreign_salesperson']    = isset($_POST['foreignprocessorsalesperson']) ? true : false;
         $processor['foreign_cuentadigital']  = isset($_POST['foreignprocessorcuentadigital']) ? true : false;
         $processor['foreign_ep']             = isset($_POST['foreignprocessorep']) ? true : false;
+        $processor['foreign_paypal']             = isset($_POST['foreignprocessorpaypal']) ? true : false;
 
         // Collect sequence details
         $sequence['sequence']                  = sanitize_text_field($_POST['sequence']);
