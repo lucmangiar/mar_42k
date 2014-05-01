@@ -330,6 +330,13 @@ e.preventDefault();
         $('#cuentadigital-payment-options').hide();
         $('#ep-payment-options').fadeIn();
     });
+    $('#paypal').change(function(){
+        $('#decidir-payment-options').hide();
+        $('#dineromail-payment-options').hide();
+        $('#salesperson-payment-options').hide();
+        $('#cuentadigital-payment-options').hide();
+        $('#paypal-payment-options').fadeIn();
+    });
 
     // ------------------------------------------------------------------------
     // (3) Tracker Page Functions
