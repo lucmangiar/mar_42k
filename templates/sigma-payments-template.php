@@ -174,7 +174,6 @@ echo '<div class="se-wrapper se-payments-wrapper" >';
         $style = 'paypal' != $event_data['processor'] ? 'style="display:none;"' : '';
         echo '<div id="paypal-payment-options" ' . $style . ' >';
         echo '<p><b>' . __( 'Payment Options', 'se') . '</b></p>';
-        echo '<p class="se-processor-methods"><input id="cash"         type="radio" value="paypal_cash"         name="paypal_medium" checked="checked"	> Efectivo<span id="se-cash" ></span></p>';
         echo '<p class="se-processor-methods"><input id="credit_cards" type="radio" value="paypal_credit_cards" name="paypal_medium"					> Tarjetas de Cr&eacute;dito<span id="se-credit-cards" ></span></p>';
         echo '</div>';
 

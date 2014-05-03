@@ -301,6 +301,7 @@ e.preventDefault();
         $('#salesperson-payment-options').hide();
         $('#ep-payment-options').hide();
         $('#cuentadigital-payment-options').hide();
+        $('#paypal-payment-options').hide();
         $('#decidir-payment-options').fadeIn();
     });
     $('#dineromail').change(function(){
@@ -308,6 +309,7 @@ e.preventDefault();
         $('#salesperson-payment-options').hide();
         $('#ep-payment-options').hide();
         $('#cuentadigital-payment-options').hide();
+        $('#paypal-payment-options').hide();
         $('#dineromail-payment-options').fadeIn();
     });
     $('#salesperson').change(function(){
@@ -315,11 +317,14 @@ e.preventDefault();
         $('#dineromail-payment-options').hide();
         $('#ep-payment-options').hide();
         $('#cuentadigital-payment-options').hide();
+        $('#paypal-payment-options').hide();
         $('#salesperson-payment-options').fadeIn();
     });
     $('#cuentadigital').change(function(){
         $('#decidir-payment-options').hide();
         $('#dineromail-payment-options').hide();
+        $('#paypal-payment-options').hide();
+        $('#salesperson-payment-options').hide();
         $('#ep-payment-options').hide();
         $('#cuentadigital-payment-options').fadeIn();
     });
@@ -328,6 +333,7 @@ e.preventDefault();
         $('#dineromail-payment-options').hide();
         $('#salesperson-payment-options').hide();
         $('#cuentadigital-payment-options').hide();
+        $('#paypal-payment-options').hide();
         $('#ep-payment-options').fadeIn();
     });
     $('#paypal').change(function(){
