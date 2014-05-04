@@ -58,13 +58,33 @@ class Sigma_PayPal extends Sigma_Payment_Processor {
     protected $replace_array;
 
     /**
-     * Decidir URL to POST the registration form
+     * Boolean that determines if we are in a testing environment or not.
      *
-     * @var string
+     * @var boolean
      */
-    //private $decidir_url = 'https://sps.decidir.com/sps-ar/Validar';
-    // TODO definir esto
-    private $paypal_url = '';
+    private $using_sandbox = true;
+
+    /*
+     * Definition of the proxy variables
+     *
+     */
+    private $proxy_host = '127.0.0.1';
+    private $proxy_port = '808';
+    private $use_proxy = false;
+    private $version = "84";
+
+    /**
+     * Credentials variables definition
+     *
+     */
+    protected $api_username;
+    protected $api_password;
+    protected $api_signature;
+
+    /**
+     * String that defines the BN Code. Is only applicable for partners
+     */
+    private $sBNCode = "PP-ECWizard";
 
     /**
      * Construct the Decidir Payment Processor Object
@@ -91,6 +111,21 @@ class Sigma_PayPal extends Sigma_Payment_Processor {
 
         // Processor Options
         $this->processor_options = get_option('sigma_processor_options');
+
+        set_api_credentials();
+    }
+
+    private function set_api_credentials() {
+        // TODO Lucho Completar con los datos que me mandó Javi
+        if ($this->using_sandbox) {
+            $api_username = "";
+            $api_password = "";
+            $api_signature = "";
+        } else {
+            $api_username = "";
+            $api_password = "";
+            $api_signature = "";
+        }
     }
 
     /**
@@ -131,7 +166,7 @@ class Sigma_PayPal extends Sigma_Payment_Processor {
 
         // Premium Event?
         if($amount > 0 && !is_null($means_of_payment_code)) {
-            $form = '<form action="' . $this->paypal_url . '" id="se-decidir-form" method="post" >';
+            $form = '<form action="' . $this->get_paypal_url() . '" id="se-decidir-form" method="post" >';
             // Shop Number.
             $form .= '<input type="hidden" name="NROCOMERCIO" value="' . $this->shop_number . '" size=8 maxlength=8 >';
             // Operacion Number.
@@ -143,16 +178,29 @@ class Sigma_PayPal extends Sigma_Payment_Processor {
             // Installments.
             $form .= '<input type="hidden" name="CUOTAS" value="' . '1' . '" size=12 >';
             // Dinamica URL.
-            $form .= '<input type="hidden" name="URLDINAMICA" value="' . get_home_url() . '/' . $this->paypal_endpoint . '" >';
+            $form .= '<input type="hidden" name="URLDINAMICA" value="' . get_home_url() . '/' . $this->get_paypal_endpoint() . '" >';
 
             $form .= $input_payment_proceed . '</form>';
 
         // Free Event?
         } else {
-            $form  = $this->get_free_event_form( $operation_number, $this->paypal_endpoint );
+            $form  = $this->get_free_event_form( $operation_number, $this->get_paypal_endpoint() );
         }
 
         return $form;
+    }
+
+    private function get_paypal_url() {
+        return ($this->using_sandbox? "https://www.sandbox.paypal.com/webscr?cmd=_express-checkout&token=" :
+            "https://www.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=");
+    }
+
+    private function get_paypal_endpoint() {
+        return ($this->using_sandbox? "https://api-3t.sandbox.paypal.com/nvp" : "https://api-3t.paypal.com/nvp");
+    }
+
+    private function get_paypal_dg_url() {
+        return ($this->using_sandbox? "https://www.sandbox.paypal.com/incontext?token=" : "https://www.paypal.com/incontext?token=");
     }
 
     /**
@@ -161,10 +209,10 @@ class Sigma_PayPal extends Sigma_Payment_Processor {
      * Add rewrite rule to handle POSTs from Paypal.
      */
     function paypal_rewrite(){
-        $decidir_regex = $this->paypal_endpoint . '/?$';
+        $decidir_regex = $this->get_paypal_endpoint() . '/?$';
         add_rewrite_rule($decidir_regex,
-        'index.php?' . $this->paypal_endpoint . '=sigma', 'top');
-        add_rewrite_tag('%' . $this->paypal_endpoint . '%', '([^&]+)');
+        'index.php?' . $this->get_paypal_endpoint() . '=sigma', 'top');
+        add_rewrite_tag('%' . $this->get_paypal_endpoint() . '%', '([^&]+)');
     }
 
     /**
@@ -174,7 +222,7 @@ class Sigma_PayPal extends Sigma_Payment_Processor {
      */
     function redirect_decidir_requests(){
         global $wp_query;
-        if(!isset($wp_query->query_vars[$this->paypal_endpoint]))
+        if(!isset($wp_query->query_vars[$this->get_paypal_endpoint()]))
             return;
 
         $this->process_decidir_request();
@@ -390,17 +438,4 @@ class Sigma_PayPal extends Sigma_Payment_Processor {
         exit;
     }
 
-    /**
-     * Get Decidir Endpoint
-     *
-     * Free event registration are processed by Decidir Endpoint.
-     * Decidir endpoint string( url ) is a private property of Decidir
-     * SPS class which isn't accessible to outsiders. This method returns
-     * the endpoint string.
-     *
-     * @return string   Decidir Endpoint
-     */
-    function get_paypal_endpoint(){
-        return $this->paypal_endpoint;
-    }
 }
