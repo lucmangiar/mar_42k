@@ -1,7 +1,7 @@
 <?php
 
 class Paypal_Functions {
-    public static function SetExpressCheckoutDG( $paymentAmount, $currencyCodeType, $paymentType, $returnURL, $cancelURL, $items) {
+    public static function set_express_checkout_dg( $paymentAmount, $currencyCodeType, $paymentType, $returnURL, $cancelURL, $items) {
         //------------------------------------------------------------------------------------------------------------------------------------
         // Construct the parameter string that describes the SetExpressCheckout API call in the shortcut implementation
 
@@ -26,7 +26,7 @@ class Paypal_Functions {
         //' If the API call succeded, then redirect the buyer to PayPal to begin to authorize payment.
         //' If an error occured, show the resulting errors
         //'---------------------------------------------------------------------------------------------------------------
-        $resArray = hash_call("SetExpressCheckout", $nvpstr);
+        $resArray = static::hash_call("set_express_checkout_dg", $nvpstr);
         $ack = strtoupper($resArray["ACK"]);
         if($ack == "SUCCESS" || $ack == "SUCCESSWITHWARNING")
         {
@@ -47,7 +47,7 @@ class Paypal_Functions {
     '		The NVP Collection object of the GetExpressCheckoutDetails Call Response.
     '-------------------------------------------------------------------------------------------
     */
-    private static function GetExpressCheckoutDetails($token) {
+    public static function get_express_checkout_details($token) {
         //'--------------------------------------------------------------
         //' At this point, the buyer has completed authorizing the payment
         //' at PayPal.  The function will call PayPal to obtain the details
@@ -61,7 +61,7 @@ class Paypal_Functions {
         //' Build a second API request to PayPal, using the token as the
         //'  ID to get the details on the payment authorization
         //'---------------------------------------------------------------------------
-        $nvpstr="&TOKEN=" . $token;
+        $nvpstr = "&TOKEN=" . $token;
 
         //'---------------------------------------------------------------------------
         //' Make the API call and store the results in an array.
@@ -69,10 +69,9 @@ class Paypal_Functions {
         //' 	an action to complete the payment.
         //'	If failed, show the error
         //'---------------------------------------------------------------------------
-        $resArray=hash_call("GetExpressCheckoutDetails",$nvpstr);
+        $resArray = static::hash_call("get_express_checkout_details",$nvpstr);
         $ack = strtoupper($resArray["ACK"]);
-        if($ack == "SUCCESS" || $ack=="SUCCESSWITHWARNING")
-        {
+        if($ack == "SUCCESS" || $ack=="SUCCESSWITHWARNING") {
             return $resArray;
         }
         else return false;
@@ -89,7 +88,7 @@ class Paypal_Functions {
     '		The NVP Collection object of the GetExpressCheckoutDetails Call Response.
     '--------------------------------------------------------------------------------------------------------------------------------------------
     */
-    private static function ConfirmPayment( $token, $paymentType, $currencyCodeType, $payerID, $FinalPaymentAmt, $items ) {
+    public static function confirm_payment( $token, $paymentType, $currencyCodeType, $payerID, $FinalPaymentAmt, $items ) {
         /* Gather the information to make the final call to
            finalize the PayPal payment.  The variable nvpstr
            holds the name value pairs
@@ -104,7 +103,6 @@ class Paypal_Functions {
         $nvpstr .= '&PAYMENTREQUEST_0_CURRENCYCODE=' . $currencyCodeType . '&IPADDRESS=' . $serverName;
 
         foreach($items as $index => $item) {
-
             $nvpstr .= "&L_PAYMENTREQUEST_0_NAME" . $index . "=" . urlencode($item["name"]);
             $nvpstr .= "&L_PAYMENTREQUEST_0_AMT" . $index . "=" . urlencode($item["amt"]);
             $nvpstr .= "&L_PAYMENTREQUEST_0_QTY" . $index . "=" . urlencode($item["qty"]);
@@ -113,7 +111,7 @@ class Paypal_Functions {
         /* Make the call to PayPal to finalize payment
            If an error occured, show the resulting errors
            */
-        $resArray=hash_call("DoExpressCheckoutPayment",$nvpstr);
+        $resArray = static::hash_call("DoExpressCheckoutPayment",$nvpstr);
 
         /* Display the API response back to the browser.
            If the response from PayPal was a success, display the response parameters'
@@ -152,9 +150,9 @@ class Paypal_Functions {
 
         //if USE_PROXY constant set to TRUE in Constants.php, then only proxy will be enabled.
         //Set proxy name to PROXY_HOST and port number to PROXY_PORT in constants.php
-        if($USE_PROXY)
+        if($USE_PROXY) {
             curl_setopt ($ch, CURLOPT_PROXY, $PROXY_HOST. ":" . $PROXY_PORT);
-
+        }
         //NVPRequest for submitting to server
         $nvpreq="METHOD=" . urlencode($methodName) . "&VERSION=" . urlencode($version) . "&PWD=" . urlencode($API_Password) . "&USER=" . urlencode($API_UserName) . "&SIGNATURE=" . urlencode($API_Signature) . $nvpStr . "&BUTTONSOURCE=" . urlencode($sBNCode);
 
@@ -169,16 +167,13 @@ class Paypal_Functions {
         $nvpReqArray=deformatNVP($nvpreq);
         $_SESSION['nvpReqArray']=$nvpReqArray;
 
-        if (curl_errno($ch))
-        {
+        if (curl_errno($ch)) {
             // moving to display page to display curl errors
             $_SESSION['curl_error_no']=curl_errno($ch) ;
             $_SESSION['curl_error_msg']=curl_error($ch);
 
             //Execute the Error handling module to display errors.
-        }
-        else
-        {
+        } else {
             //closing the curl
             curl_close($ch);
         }
@@ -220,7 +215,7 @@ class Paypal_Functions {
       * @nvpArray is Associative Array.
        ----------------------------------------------------------------------------------
       */
-    public static function deformatNVP($nvpstr) {
+    public static function deformat_nvp($nvpstr) {
         $intial=0;
         $nvpArray = array();
 
