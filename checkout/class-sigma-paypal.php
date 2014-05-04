@@ -135,44 +135,30 @@ class Sigma_PayPal extends Sigma_Payment_Processor {
      * with a button to proceed to Paypal.
      * IMPORTANT: This method only constructs the form, does not make any logic or POST method
      *
-     * TODO Lucho: Ver bien los parametros que necesita Paypal y armar el form correspondiente
+     * TODO Lucho: Controlar bien esto que es la papa
      *
-     * @param   string   $operation_number   Registration Token
-     * @param   string   $amount             Event Price + Additional Products Price
-     * @param   string   $means_of_payment   Visa, Amex, etc.
-     * @param   string   $submit             Visa, Amex, etc.
+     * @param   object   $event_data   Registration Token
+     * @param   boolean  $submit             Visa, Amex, etc.
      * @return  string  Decidir Payment Form
      */
-    function get_form( $operation_number, $amount, $means_of_payment, $submit ){
+    function get_form( $event_data, $submit ){
         /* Whether the payment button should be present or not */
         $input_payment_proceed = '';
+
+        $operation_number = $event_data['token'];
+        $amount = $event_data['price']['value'];
+
         if (!empty($submit)) {
             $input_payment_proceed .= "<input type='submit' id='se-proceed' value='Proceed to payment' ><a
                 id='se-modify' class='button' href='" . get_home_url() .
                 "/sigma-events/payment/?sigma_token=" . $operation_number . "#se-order'>Modify</a>";
         }
 
-        /**
-         * Means of Payment Mapping
-         */
-        $means_of_payment_code = null;
-        if( 'decidir_visa' == $means_of_payment ) {
-            $means_of_payment_code = 1;
-        } else if( 'decidir_amex' == $means_of_payment ) {
-            $means_of_payment_code = 6;
-        } else if( 'decidir_mastercard' == $means_of_payment ) {
-            $means_of_payment_code = 15;
-        }
-
         // Premium Event?
-        if($amount > 0 && !is_null($means_of_payment_code)) {
+        if($amount > 0) {
             $form = '<form action="' . $this->get_paypal_url() . '" id="se-decidir-form" method="post" >';
-            // Shop Number.
-            $form .= '<input type="hidden" name="NROCOMERCIO" value="' . $this->shop_number . '" size=8 maxlength=8 >';
             // Operacion Number.
             $form .= '<input type="hidden" name="NROOPERACION" value="' . $operation_number . '" size=10 maxlength=10 >';
-            // Medio De Pago.
-            $form .= '<input type="hidden" name="MEDIODEPAGO" value="' . $means_of_payment_code . '" size=12 >';
             // Amount.
             $form .= '<input type="hidden" name="MONTO" value="' . $amount . '" size=12 maxlength=12 >';
             // Installments.
@@ -181,8 +167,6 @@ class Sigma_PayPal extends Sigma_Payment_Processor {
             $form .= '<input type="hidden" name="URLDINAMICA" value="' . get_home_url() . '/' . $this->get_paypal_endpoint() . '" >';
 
             $form .= $input_payment_proceed . '</form>';
-
-        // Free Event?
         } else {
             $form  = $this->get_free_event_form( $operation_number, $this->get_paypal_endpoint() );
         }

@@ -245,6 +245,11 @@ echo '<div class="se-wrapper se-payments-wrapper" >';
         echo $sigma_events->payments_cuentadigital->get_form($event_data, false);
     endif;
 
+    /* Present the Paypal Payment Form. */
+    if( 'paypal' == $event_data['processor'] || $event_data['freedom']['paypal'] ):
+        echo $sigma_events->payments_paypal->get_form($event_data, false);
+    endif;
+
     /* Present the EP Payment Form. */
     if( 'ep' == $event_data['processor'] || $event_data['freedom']['ep'] ):
         echo $sigma_events->payments_ep->get_form( $event_data, false);
