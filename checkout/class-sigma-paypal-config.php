@@ -208,21 +208,16 @@ class Paypal_Functions {
      Returns:
     ----------------------------------------------------------------------------------
     */
-    // TODO Lucho Revisar esta garompa porque las variables que se marcan como global las tengo en class-sigma-paypal
     public static function RedirectToPayPal ($token) {
-        global $PAYPAL_URL;
-
         // Redirect to paypal.com here
-        $payPalURL = $PAYPAL_URL . $token;
+        $payPalURL = static::get_paypal_url() . $token;
         header("Location: ".$payPalURL);
         exit;
     }
 
     public static function RedirectToPayPalDG ($token) {
-        global $PAYPAL_DG_URL;
-
         // Redirect to paypal.com here
-        $payPalURL = $PAYPAL_DG_URL . $token;
+        $payPalURL = static::get_paypal_dg_url() . $token;
         header("Location: ".$payPalURL);
         exit;
     }
