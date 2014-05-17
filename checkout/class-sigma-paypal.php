@@ -29,7 +29,7 @@ class Sigma_PayPal extends Sigma_Payment_Processor {
     private $processor_options;
 
     /**
-     * Decidir Log File Name
+     * Paypal Log File Name
      *
      * @var string
      */
@@ -63,7 +63,7 @@ class Sigma_PayPal extends Sigma_Payment_Processor {
     private $sBNCode = "PP-ECWizard";
 
     /**
-     * Construct the Decidir Payment Processor Object
+     * Construct the Paypal Payment Processor Object
      *
      * Sets up the registration table name and payment table name. Sets
      * up rewrites and redirects.
@@ -79,11 +79,11 @@ class Sigma_PayPal extends Sigma_Payment_Processor {
         $this->registration_table = $registration_table;
         $this->payment_table = $payment_table;
 
-        // Add rewrite for Decidir response.
+        // Add rewrite for Paypal response.
         add_action('init', array($this, 'paypal_rewrite'));
 
-        // Process rewritten Decidir POSTs.
-        add_action('template_redirect', array($this, 'redirect_decidir_requests'));
+        // Process rewritten Paypal POSTs.
+        add_action('template_redirect', array($this, 'redirect_paypal_requests'));
 
         // Processor Options
         $this->processor_options = get_option('sigma_processor_options');
@@ -105,7 +105,7 @@ class Sigma_PayPal extends Sigma_Payment_Processor {
     }
 
     /**
-     * Get Decidir Checkout Form
+     * Get Paypal Checkout Form
      *
      * This form displays the final confirmation message to the customer,
      * with a button to proceed to Paypal.
@@ -115,7 +115,7 @@ class Sigma_PayPal extends Sigma_Payment_Processor {
      *
      * @param   object   $event_data   Registration Token
      * @param   boolean  $submit             Visa, Amex, etc.
-     * @return  string  Decidir Payment Form
+     * @return  string  Paypal Payment Form
      */
     function get_form( $event_data, $submit ){
         /* Whether the payment button should be present or not */
@@ -132,7 +132,7 @@ class Sigma_PayPal extends Sigma_Payment_Processor {
 
         // Premium Event?
         if($amount > 0) {
-            $form = '<form action="' . Paypal_Functions::get_paypal_url() . '" id="se-decidir-form" method="post" >';
+            $form = '<form action="' . Paypal_Functions::get_paypal_url() . '" id="se-paypal-form" method="post" >';
             // Operacion Number.
             $form .= '<input type="hidden" name="NROOPERACION" value="' . $operation_number . '" size=10 maxlength=10 >';
             // Amount.
@@ -156,39 +156,39 @@ class Sigma_PayPal extends Sigma_Payment_Processor {
      * Add rewrite rule to handle POSTs from Paypal.
      */
     function paypal_rewrite(){
-        $decidir_regex = Paypal_Functions::get_paypal_endpoint() . '/?$';
-        add_rewrite_rule($decidir_regex,
+        $paypal_regex = Paypal_Functions::get_paypal_endpoint() . '/?$';
+        add_rewrite_rule($paypal_regex,
         'index.php?' . Paypal_Functions::get_paypal_endpoint() . '=sigma', 'top');
         add_rewrite_tag('%' . Paypal_Functions::get_paypal_endpoint() . '%', '([^&]+)');
     }
 
     /**
-     * Redirect Decidir Requests.
+     * Redirect Paypal Requests.
      *
-     * Handle redirected requests from Decidir via custom rewrite rules.
+     * Handle redirected requests from Paypal via custom rewrite rules.
      */
-    function redirect_decidir_requests(){
+    function redirect_paypal_requests(){
         global $wp_query;
         if(!isset($wp_query->query_vars[Paypal_Functions::get_paypal_endpoint()]))
             return;
 
-        $this->process_decidir_request();
+        $this->process_paypal_request();
     }
 
     /**
-     * Process Decidir Request
+     * Process Paypal Request
      *
      * Initializes the processing. The method calles the rest of the methods
      * to process the request.
      *
      * Silently exits at the end of successfull processing.
      */
-    function process_decidir_request(){
+    function process_paypal_request(){
         // Setup Sigma Options
         $this->options = get_option('sigma_options');
 
         // Write Log and send debug emails.
-        $this->log_and_debug_emails( $this->options, $this->processor_options['decidir']['enable_logging'] );
+        $this->log_and_debug_emails( $this->options, $this->processor_options['paypal']['enable_logging'] );
 
         // Setup $post and $registration arrays.
         $r = $this->setup_post_and_registration_data( $_POST, $this->registration_table );
@@ -282,25 +282,11 @@ class Sigma_PayPal extends Sigma_Payment_Processor {
         $post['codeauth'] = isset($POST['codautorizacion'])
           ? sanitize_text_field($POST['codautorizacion']) : '';
 
-        /**
-         * (5) Card | tarjeta
-         *
-         *   From the logs,
-         *   Possible valued for 'tarjeta',
-         *
-         * - MasterCard
-         * - Visa
-         * - Amex
-         */
-        $post['tarjeta'] = isset($POST['tarjeta']) ? sanitize_text_field($POST['tarjeta']) : '';
-        $post['tarjeta'] = str_replace(' ', '_', $post['tarjeta']);
-        $post['tarjeta'] = 'decidir_' . strtolower( $post['tarjeta'] );
-
-        // (6) Email | emailcomprador
+        // (5) Email | emailcomprador
         $post['email'] = isset($POST['emailcomprador'])
           ? sanitize_email($POST['emailcomprador']) : '';
 
-        // (7) DateTime | fechahora
+        // (6) DateTime | fechahora
         $post['fechahora'] = isset($POST['fechahora'])
           ? sanitize_text_field($POST['fechahora']) : '';
 
@@ -311,19 +297,19 @@ class Sigma_PayPal extends Sigma_Payment_Processor {
         $date = explode('/', $datetime[0]);
         $post['fechahora'] = $date[2] . '-' . $date[1] . '-' . $date[0] . ' ' . $datetime[1];
 
-        // (8) Title | titular
+        // (7) Title | titular
         $post['titular'] = isset($POST['titular'])
           ? sanitize_text_field($POST['titular']) : '';
 
-        // (9) Reason | motivo
+        // (8) Reason | motivo
         $post['motivo'] = isset($POST['motivo'])
           ? sanitize_text_field($POST['motivo']) : '';
 
-        // (10) Is Free?
+        // (9) Is Free?
         $post['free'] = isset($POST['free']) && $POST['free'] == 'FREE' ? true : false;
 
-        // (11) Processor
-        $post['processor'] = 'decidir';
+        // (10) Processor
+        $post['processor'] = 'paypal';
 
         $output = array(
             'registration' => $registration,
@@ -340,11 +326,11 @@ class Sigma_PayPal extends Sigma_Payment_Processor {
      * @return  boolean  Valid IP address or not
      */
     function check_ip( $post, $options ){
-        $check_ip   = $this->processor_options['decidir']['enable_ip'];
-        $decidir_ip = $this->processor_options['decidir']['ip_address'];
+        $check_ip   = $this->processor_options['paypal']['enable_ip'];
+        $paypal_ip = $this->processor_options['paypal']['ip_address'];
         $free       = $post['free'];
         $ip         = $_SERVER['REMOTE_ADDR'];
-        if( $check_ip && ! $free && $ip != $decidir_ip):
+        if( $check_ip && ! $free && $ip != $paypal_ip):
             $this->log_error( "\nError: IP Address not matched error | Token: " . $post["token"] );
             return false;
         else:
@@ -355,7 +341,7 @@ class Sigma_PayPal extends Sigma_Payment_Processor {
     /**
      * Handle Free Events
      *
-     * Free event registrations are handled by Decidir Endpoint. Upon
+     * Free event registrations are handled by Paypal Endpoint. Upon
      * detecting a request to process a free event registration, this
      * method fills out the missing data using the registration record
      * and calls db updates and email sending.
