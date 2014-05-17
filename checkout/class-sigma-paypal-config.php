@@ -1,6 +1,31 @@
 <?php
 
 class Paypal_Functions {
+
+    /*
+     * Definition of the proxy variables
+     *
+     */
+    public static $proxy_host = '127.0.0.1';
+    public static $proxy_port = '808';
+    public static $use_proxy = false;
+    public static $version = "84";
+
+    /**
+     * Credentials variables definition
+     *
+     */
+    public static $api_username = '';
+    public static $api_password = '';
+    public static $api_signature = '';
+
+    /**
+     * Boolean that determines if we are in a testing environment or not.
+     *
+     * @var boolean
+     */
+    private static $using_sandbox = true;
+
     public static function set_express_checkout_dg( $paymentAmount, $currencyCodeType, $paymentType, $returnURL, $cancelURL, $items) {
         //------------------------------------------------------------------------------------------------------------------------------------
         // Construct the parameter string that describes the SetExpressCheckout API call in the shortcut implementation
@@ -130,15 +155,9 @@ class Paypal_Functions {
     '-------------------------------------------------------------------------------------------------------------------------------------------
      */
     private static function hash_call($methodName,$nvpStr) {
-        //declaring of global variables
-        global $API_Endpoint, $version, $API_UserName, $API_Password, $API_Signature;
-        global $USE_PROXY, $PROXY_HOST, $PROXY_PORT;
-        global $gv_ApiErrorURL;
-        global $sBNCode;
-
         //setting the curl parameters.
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL,$API_Endpoint);
+        curl_setopt($ch, CURLOPT_URL, static::get_paypal_endpoint());
         curl_setopt($ch, CURLOPT_VERBOSE, 1);
 
         //turning off the server and peer verification(TrustManager Concept).
@@ -150,11 +169,13 @@ class Paypal_Functions {
 
         //if USE_PROXY constant set to TRUE in Constants.php, then only proxy will be enabled.
         //Set proxy name to PROXY_HOST and port number to PROXY_PORT in constants.php
-        if($USE_PROXY) {
-            curl_setopt ($ch, CURLOPT_PROXY, $PROXY_HOST. ":" . $PROXY_PORT);
+        if(static::$use_proxy) {
+            curl_setopt ($ch, CURLOPT_PROXY, static::$proxy_host . ":" . static::$proxy_port);
         }
         //NVPRequest for submitting to server
-        $nvpreq="METHOD=" . urlencode($methodName) . "&VERSION=" . urlencode($version) . "&PWD=" . urlencode($API_Password) . "&USER=" . urlencode($API_UserName) . "&SIGNATURE=" . urlencode($API_Signature) . $nvpStr . "&BUTTONSOURCE=" . urlencode($sBNCode);
+        $nvpreq="METHOD=" . urlencode($methodName) . "&VERSION=" . urlencode(static::$version) . "&PWD=" . urlencode(static::$api_password) .
+            "&USER=" . urlencode(static::$api_username) . "&SIGNATURE=" . urlencode(static::$api_signature) . $nvpStr . "&BUTTONSOURCE=" .
+            urlencode(static::$sBNCode);
 
         //setting the nvpreq as POST FIELD to curl
         curl_setopt($ch, CURLOPT_POSTFIELDS, $nvpreq);
@@ -234,6 +255,19 @@ class Paypal_Functions {
             $nvpstr=substr($nvpstr,$valuepos+1,strlen($nvpstr));
         }
         return $nvpArray;
+    }
+
+    public static function get_paypal_url() {
+        return (static::$using_sandbox? "https://www.sandbox.paypal.com/webscr?cmd=_express-checkout&token=" :
+            "https://www.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=");
+    }
+
+    public static function get_paypal_endpoint() {
+        return (static::$using_sandbox? "https://api-3t.sandbox.paypal.com/nvp" : "https://api-3t.paypal.com/nvp");
+    }
+
+    public static function get_paypal_dg_url() {
+        return (static::$using_sandbox? "https://www.sandbox.paypal.com/incontext?token=" : "https://www.paypal.com/incontext?token=");
     }
 }
 
