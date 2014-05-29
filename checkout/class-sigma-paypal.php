@@ -140,7 +140,7 @@ class Sigma_PayPal extends Sigma_Payment_Processor {
             // Installments.
             $form .= '<input type="hidden" name="CUOTAS" value="' . '1' . '" size=12 >';
             // Dinamica URL.
-            $form .= '<input type="hidden" name="URLDINAMICA" value="' . get_home_url() . '/' . Paypal_Functions::get_paypal_endpoint() . '" >';
+            $form .= '<input type="hidden" name="notify_url" value="' . get_home_url() . '/' . Paypal_Functions::get_paypal_endpoint() . '" >';
 
             $form .= $input_payment_proceed . '</form>';
         } else {

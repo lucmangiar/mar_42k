@@ -258,7 +258,7 @@ class Paypal_Functions {
     }
 
     public static function get_paypal_endpoint() {
-        return (static::$using_sandbox? "https://api-3t.sandbox.paypal.com/nvp" : "https://api-3t.paypal.com/nvp");
+        return 'notify_url.php';
     }
 
     public static function get_paypal_dg_url() {
