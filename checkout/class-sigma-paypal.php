@@ -62,9 +62,7 @@ class Sigma_PayPal extends Sigma_Payment_Processor {
      */
     private $sBNCode = "PP-ECWizard";
 
-    private $api_username;
-    private $api_password;
-    private $api_signature;
+    private $paypal_email;
 
     /**
      * Construct the Paypal Payment Processor Object
@@ -97,22 +95,16 @@ class Sigma_PayPal extends Sigma_Payment_Processor {
 
     private function set_api_credentials() {
         if ($this->using_sandbox) {
-            $this->api_username = 'javierpetrucci+PPSANDBOX_api1.gmail.com';
-            $this->api_password = '1396537509';
-            $this->api_signature = 'AFcWxV21C7fd0v3bYYYRCpSSRl31Ab9bBR1gFzYLlq6YDCzrZnUmglFK';
+            $this->paypal_email = 'javierpetrucci+PPSANDBOX@gmail.com';
         } else {
-            $this->api_username = '';
-            $this->api_password = '';
-            $this->api_signature = '';
+            $this->paypal_email = '';
         }
     }
 
 
     private function get_api_credentials() {
         return array(
-            'username' => $this->api_username,
-            'password' => $this->api_password,
-            'signature' => $this->api_signature
+            'paypal_email' => $this->paypal_email,
         );
     }
 
@@ -148,6 +140,9 @@ class Sigma_PayPal extends Sigma_Payment_Processor {
 
             // This is a shipping cart
             $form .= '<input type="hidden" name="cmd" value="x_cart">';
+
+            // Paypal ID
+            $form .= '<input type="hidden" name="business" value="' . $this->get_api_credentials()['paypal_email'] . '">';
 
             // Send the operation number
             $form .= '<input type="hidden" name="custom" value="' . $operation_number . '">';
