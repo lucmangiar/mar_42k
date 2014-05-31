@@ -58,10 +58,8 @@ class Sigma_PayPal extends Sigma_Payment_Processor {
     protected $replace_array;
 
     /**
-     * String that defines the BN Code. Is only applicable for partners
+     * @var Paypal ID
      */
-    private $sBNCode = "PP-ECWizard";
-
     private $paypal_email;
 
     /**
