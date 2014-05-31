@@ -92,11 +92,10 @@ class Sigma_PayPal extends Sigma_Payment_Processor {
     }
 
     private function set_api_credentials() {
-        // TODO Lucho Completar con los datos que me mandó Javi
         if ($this->using_sandbox) {
-            $api_username = "";
-            $api_password = "";
-            $api_signature = "";
+            $api_username = "javierpetrucci+PPSANDBOX_api1.gmail.com";
+            $api_password = "1396537509";
+            $api_signature = "AFcWxV21C7fd0v3bYYYRCpSSRl31Ab9bBR1gFzYLlq6YDCzrZnUmglFK";
         } else {
             $api_username = "";
             $api_password = "";
@@ -132,7 +131,7 @@ class Sigma_PayPal extends Sigma_Payment_Processor {
 
         // Premium Event?
         if($amount > 0) {
-            $form = '<form action="' . Paypal_Functions::get_paypal_url() . '" id="se-paypal-form" method="post" >';
+            $form = '<form action="' . Paypal_Utilities::get_paypal_url() . '" id="se-paypal-form" method="post" >';
 
             // This is a shipping cart
             $form .= '<input type="hidden" name="cmd" value="x_cart">';
@@ -148,7 +147,7 @@ class Sigma_PayPal extends Sigma_Payment_Processor {
             $form .= '<input type="hidden" name="amount" value="' . $amount . '" size=12 maxlength=12 >';
 
             // Dinamica URL.
-            $form .= '<input type="hidden" name="notify_url" value="' . get_home_url() . '/' . Paypal_Functions::get_paypal_endpoint() . '" >';
+            $form .= '<input type="hidden" name="notify_url" value="' . get_home_url() . '/' . Paypal_Utilities::get_paypal_endpoint() . '" >';
 
             $form .= $input_payment_proceed . '</form>';
         }
@@ -162,10 +161,10 @@ class Sigma_PayPal extends Sigma_Payment_Processor {
      * Add rewrite rule to handle POSTs from Paypal.
      */
     function paypal_rewrite(){
-        $paypal_regex = Paypal_Functions::get_paypal_endpoint() . '/?$';
+        $paypal_regex = Paypal_Utilities::get_paypal_endpoint() . '/?$';
         add_rewrite_rule($paypal_regex,
-        'index.php?' . Paypal_Functions::get_paypal_endpoint() . '=sigma', 'top');
-        add_rewrite_tag('%' . Paypal_Functions::get_paypal_endpoint() . '%', '([^&]+)');
+        'index.php?' . Paypal_Utilities::get_paypal_endpoint() . '=sigma', 'top');
+        add_rewrite_tag('%' . Paypal_Utilities::get_paypal_endpoint() . '%', '([^&]+)');
     }
 
     /**
@@ -175,7 +174,7 @@ class Sigma_PayPal extends Sigma_Payment_Processor {
      */
     function redirect_paypal_requests(){
         global $wp_query;
-        if(!isset($wp_query->query_vars[Paypal_Functions::get_paypal_endpoint()]))
+        if(!isset($wp_query->query_vars[Paypal_Utilities::get_paypal_endpoint()]))
             return;
 
         $this->process_paypal_request();
@@ -204,15 +203,6 @@ class Sigma_PayPal extends Sigma_Payment_Processor {
         else:
             exit;
         endif;
-
-        // Redirect Free Event Registrations.
-        if($this->post['free']):
-            $this->handle_free_events();
-        endif;
-
-        // Check IP Address
-        $r = $this->check_ip( $this->post, $this->options );
-        if( ! $r ) exit;
 
         // Update tables
         $this->update_tables( $this->payment_table, $this->registration_table, $this->post, $this->registration );
@@ -334,9 +324,8 @@ class Sigma_PayPal extends Sigma_Payment_Processor {
     function check_ip( $post, $options ){
         $check_ip   = $this->processor_options['paypal']['enable_ip'];
         $paypal_ip = $this->processor_options['paypal']['ip_address'];
-        $free       = $post['free'];
         $ip         = $_SERVER['REMOTE_ADDR'];
-        if( $check_ip && ! $free && $ip != $paypal_ip):
+        if( $check_ip && $ip != $paypal_ip):
             $this->log_error( "\nError: IP Address not matched error | Token: " . $post["token"] );
             return false;
         else:

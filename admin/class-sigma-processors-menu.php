@@ -82,7 +82,10 @@ class Sigma_Processors_Menu{
                 'enable_logging'          => true,
                 'enable_ip'               => false,
                 'ip_address'              => '200.41.53.129'
-            )
+            ),
+            'paypal' => array(
+                'enable_logging'          => true
+            ),
         );
     }
 

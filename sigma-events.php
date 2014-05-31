@@ -97,6 +97,11 @@ class Sigma_Events{
     public $payments_dineromail;
 
     /**
+     * Paypal Payments
+     */
+    public $payments_paypal;
+
+    /**
      * Payments via a salesperson
      */
     public $payments_salesperson;
@@ -464,6 +469,11 @@ class Sigma_Events{
          * Add rewrite rules for Decidir SPS.
          */
         $this->payments_decidir->decidir_rewrite();
+
+        /**
+         * Add rewrite rules for Paypal.
+         */
+        $this->payments_paypal->paypal_rewrite();
 
         /**
          * Add rewrite rules for Dineromail.

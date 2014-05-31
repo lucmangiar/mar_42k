@@ -1,11 +1,10 @@
 <?php
 
-class Paypal_Functions {
-
+class Paypal_Utilities {
+/*
     /*
      * Definition of the proxy variables
      *
-     */
     public static $proxy_host = '127.0.0.1';
     public static $proxy_port = '808';
     public static $use_proxy = false;
@@ -14,7 +13,6 @@ class Paypal_Functions {
     /**
      * Credentials variables definition
      *
-     */
     public static $api_username = '';
     public static $api_password = '';
     public static $api_signature = '';
@@ -23,7 +21,6 @@ class Paypal_Functions {
      * Boolean that determines if we are in a testing environment or not.
      *
      * @var boolean
-     */
     private static $using_sandbox = true;
 
     public static function set_express_checkout_dg( $paymentAmount, $currencyCodeType, $paymentType, $returnURL, $cancelURL, $items) {
@@ -71,7 +68,6 @@ class Paypal_Functions {
     ' Returns:
     '		The NVP Collection object of the GetExpressCheckoutDetails Call Response.
     '-------------------------------------------------------------------------------------------
-    */
     public static function get_express_checkout_details($token) {
         //'--------------------------------------------------------------
         //' At this point, the buyer has completed authorizing the payment
@@ -112,12 +108,10 @@ class Paypal_Functions {
     ' Returns:
     '		The NVP Collection object of the GetExpressCheckoutDetails Call Response.
     '--------------------------------------------------------------------------------------------------------------------------------------------
-    */
     public static function confirm_payment( $token, $paymentType, $currencyCodeType, $payerID, $FinalPaymentAmt, $items ) {
         /* Gather the information to make the final call to
            finalize the PayPal payment.  The variable nvpstr
            holds the name value pairs
-           */
         $token 				= urlencode($token);
         $paymentType 		= urlencode($paymentType);
         $currencyCodeType 	= urlencode($currencyCodeType);
@@ -135,13 +129,11 @@ class Paypal_Functions {
         }
         /* Make the call to PayPal to finalize payment
            If an error occured, show the resulting errors
-           */
         $resArray = static::hash_call("DoExpressCheckoutPayment",$nvpstr);
 
         /* Display the API response back to the browser.
            If the response from PayPal was a success, display the response parameters'
            If the response was an error, display the errors received using APIError.php.
-           */
         $ack = strtoupper($resArray["ACK"]);
 
         return $resArray;
@@ -153,7 +145,6 @@ class Paypal_Functions {
      * @nvpStr is nvp string.
      * returns an associtive array containing the response from the server.
     '-------------------------------------------------------------------------------------------------------------------------------------------
-     */
     private static function hash_call($methodName,$nvpStr) {
         //setting the curl parameters.
         $ch = curl_init();
@@ -207,7 +198,6 @@ class Paypal_Functions {
      Inputs:  NVP string.
      Returns:
     ----------------------------------------------------------------------------------
-    */
     public static function RedirectToPayPal ($token) {
         // Redirect to paypal.com here
         $payPalURL = static::get_paypal_url() . $token;
@@ -230,7 +220,6 @@ class Paypal_Functions {
       * @nvpstr is NVPString.
       * @nvpArray is Associative Array.
        ----------------------------------------------------------------------------------
-      */
     public static function deformat_nvp($nvpstr) {
         $intial=0;
         $nvpArray = array();
@@ -242,7 +231,7 @@ class Paypal_Functions {
             //position of value
             $valuepos = strpos($nvpstr,'&') ? strpos($nvpstr,'&'): strlen($nvpstr);
 
-            /*getting the Key and Value values and storing in a Associative Array*/
+            /*getting the Key and Value values and storing in a Associative Array
             $keyval=substr($nvpstr,$intial,$keypos);
             $valval=substr($nvpstr,$keypos+1,$valuepos-$keypos-1);
             //decoding the respose
@@ -250,14 +239,14 @@ class Paypal_Functions {
             $nvpstr=substr($nvpstr,$valuepos+1,strlen($nvpstr));
         }
         return $nvpArray;
-    }
+    }*/
 
     public static function get_paypal_url() {
         return (static::$using_sandbox? "https://www.sandbox.paypal.com/webscr" : "https://www.paypal.com/cgi-bin/webscr");
     }
 
     public static function get_paypal_endpoint() {
-        return 'notify_url.php';
+        return 'post_paypal_ipn';
     }
 
     public static function get_paypal_dg_url() {
