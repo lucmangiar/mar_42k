@@ -133,18 +133,24 @@ class Sigma_PayPal extends Sigma_Payment_Processor {
         // Premium Event?
         if($amount > 0) {
             $form = '<form action="' . Paypal_Functions::get_paypal_url() . '" id="se-paypal-form" method="post" >';
-            // Operacion Number.
-            $form .= '<input type="hidden" name="NROOPERACION" value="' . $operation_number . '" size=10 maxlength=10 >';
+
+            // This is a shipping cart
+            $form .= '<input type="hidden" name="cmd" value="x_cart">';
+
+            // The bill is in dollars
+            $form .= '<input type="hidden" name="currency_code" value="USD">';
+
+            // Item name and value
+            $form .= '<input type="hidden" name="item_name" value="suscripcion">';
+            $form .= '<input type="hidden" name="item_value" value="' . $operation_number . '">';
+
             // Amount.
-            $form .= '<input type="hidden" name="MONTO" value="' . $amount . '" size=12 maxlength=12 >';
-            // Installments.
-            $form .= '<input type="hidden" name="CUOTAS" value="' . '1' . '" size=12 >';
+            $form .= '<input type="hidden" name="amount" value="' . $amount . '" size=12 maxlength=12 >';
+
             // Dinamica URL.
             $form .= '<input type="hidden" name="notify_url" value="' . get_home_url() . '/' . Paypal_Functions::get_paypal_endpoint() . '" >';
 
             $form .= $input_payment_proceed . '</form>';
-        } else {
-            $form  = $this->get_free_event_form( $operation_number, Paypal_Functions::get_paypal_endpoint() );
         }
 
         return $form;
