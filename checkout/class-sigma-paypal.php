@@ -62,6 +62,10 @@ class Sigma_PayPal extends Sigma_Payment_Processor {
      */
     private $sBNCode = "PP-ECWizard";
 
+    private $api_username;
+    private $api_password;
+    private $api_signature;
+
     /**
      * Construct the Paypal Payment Processor Object
      *
@@ -88,19 +92,28 @@ class Sigma_PayPal extends Sigma_Payment_Processor {
         // Processor Options
         $this->processor_options = get_option('sigma_processor_options');
 
-        set_api_credentials();
+        $this->set_api_credentials();
     }
 
     private function set_api_credentials() {
         if ($this->using_sandbox) {
-            $api_username = "javierpetrucci+PPSANDBOX_api1.gmail.com";
-            $api_password = "1396537509";
-            $api_signature = "AFcWxV21C7fd0v3bYYYRCpSSRl31Ab9bBR1gFzYLlq6YDCzrZnUmglFK";
+            $this->api_username = 'javierpetrucci+PPSANDBOX_api1.gmail.com';
+            $this->api_password = '1396537509';
+            $this->api_signature = 'AFcWxV21C7fd0v3bYYYRCpSSRl31Ab9bBR1gFzYLlq6YDCzrZnUmglFK';
         } else {
-            $api_username = "";
-            $api_password = "";
-            $api_signature = "";
+            $this->api_username = '';
+            $this->api_password = '';
+            $this->api_signature = '';
         }
+    }
+
+
+    private function get_api_credentials() {
+        return array(
+            'username' => $this->api_username,
+            'password' => $this->api_password,
+            'signature' => $this->api_signature
+        );
     }
 
     /**
@@ -109,8 +122,6 @@ class Sigma_PayPal extends Sigma_Payment_Processor {
      * This form displays the final confirmation message to the customer,
      * with a button to proceed to Paypal.
      * IMPORTANT: This method only constructs the form, does not make any logic or POST method
-     *
-     * TODO Lucho: Controlar bien esto que es la papa
      *
      * @param   object   $event_data   Registration Token
      * @param   boolean  $submit             Visa, Amex, etc.
@@ -122,6 +133,8 @@ class Sigma_PayPal extends Sigma_Payment_Processor {
 
         $operation_number = $event_data['token'];
         $amount = $event_data['price']['value'];
+        $event_name = $event_data['title_'];
+        $event_id = $event_data['id'];
 
         if (!empty($submit)) {
             $input_payment_proceed .= "<input type='submit' id='se-proceed' value='Proceed to payment' ><a
@@ -136,17 +149,23 @@ class Sigma_PayPal extends Sigma_Payment_Processor {
             // This is a shipping cart
             $form .= '<input type="hidden" name="cmd" value="x_cart">';
 
+            // Send the operation number
+            $form .= '<input type="hidden" name="custom" value="' . $operation_number . '">';
+
             // The bill is in dollars
             $form .= '<input type="hidden" name="currency_code" value="USD">';
 
             // Item name and value
-            $form .= '<input type="hidden" name="item_name" value="suscripcion">';
-            $form .= '<input type="hidden" name="item_value" value="' . $operation_number . '">';
+            $form .= '<input type="hidden" name="item_name" value="' . $event_name . '">';
+            $form .= '<input type="hidden" name="item_value" value="' . $event_id . '">';
 
             // Amount.
-            $form .= '<input type="hidden" name="amount" value="' . $amount . '" size=12 maxlength=12 >';
+            $form .= '<input type="hidden" name="amount" value="' . $amount . '">';
 
-            // Dinamica URL.
+            // Quantity
+            $form .= '<input type="hidden" name="quantity" value="1" >';
+
+            // Notify URL. Is the URL used by Paypal for POSTing me the information of the payment
             $form .= '<input type="hidden" name="notify_url" value="' . get_home_url() . '/' . Paypal_Utilities::get_paypal_endpoint() . '" >';
 
             $form .= $input_payment_proceed . '</form>';
@@ -226,18 +245,20 @@ class Sigma_PayPal extends Sigma_Payment_Processor {
      * @param   array $registration_table   Registration Table Name
      * @return  array Double element array. 'post' and 'registration' indices.
      */
+
+    // TODO Liquidar este metodo
     function setup_post_and_registration_data( $POST, $registration_table ){
-        // (1.0) Token | Noperacion
-        $post['token'] = isset($POST['noperacion']) ? sanitize_text_field($POST['noperacion']) : '';
-        if( '' == $post['token']):
+        // We get the operation number form custom
+        $operation_number = $POST['custom'];
+        if(empty($operation_number)) {
             $this->log_error( "\nError: No 'noperacion' field in the POST Error" );
             return false;
-        endif;
+        }
 
         // (1.1) Registration data
-        $registration = $this->get_registration_record( $registration_table, $post["token"] );
+        $registration = $this->get_registration_record( $registration_table, $operation_number );
         if( ! $registration ):
-            $this->log_error( "\nError: No registration record | Token: " . $post["token"] );
+            $this->log_error( "\nError: No registration record | Token: " . $operation_number );
             return false;
         endif;
 
@@ -300,12 +321,6 @@ class Sigma_PayPal extends Sigma_Payment_Processor {
         // (8) Reason | motivo
         $post['motivo'] = isset($POST['motivo'])
           ? sanitize_text_field($POST['motivo']) : '';
-
-        // (9) Is Free?
-        $post['free'] = isset($POST['free']) && $POST['free'] == 'FREE' ? true : false;
-
-        // (10) Processor
-        $post['processor'] = 'paypal';
 
         $output = array(
             'registration' => $registration,
