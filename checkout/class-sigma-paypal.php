@@ -342,7 +342,7 @@ class Sigma_PayPal extends Sigma_Payment_Processor {
      * and calls db updates and email sending.
      *
      * @return  void    Redirects to the tracker page
-     */
+
     function handle_free_events(){
         // Fill Free Event Missing Data from POST
         $this->post['codeauth']     = 'none';
@@ -365,5 +365,5 @@ class Sigma_PayPal extends Sigma_Payment_Processor {
         wp_redirect($redirect);
         exit;
     }
-
+    */
 }
