@@ -99,8 +99,9 @@ if(have_posts()): while(have_posts()): the_post();
 				
 				// DNI
 				echo "<div class='se-dni se-half' >";
-					echo "<label id='se-dni-first'>" . __("ID/DNI/Passport Number: ", 'se') . "</label>";
+					echo "<label id='se-dni-first'>" . __("Identity Number (ID, DNI, Passport, RG or CI): ", 'se') . "</label>";
 					echo "<input type='text' id='dni-track' name='dni-track' value='' >";
+					echo "</br>Your identity card or passport number, without letters.";
 				echo "</div>";
 				echo "<div class='se-row se-half'>";
 					echo "<input type='submit' id='se-track-button' name='track' value='" .
@@ -166,7 +167,7 @@ if(have_posts()): while(have_posts()): the_post();
 					
 					// DNI
 					echo "<div class='se-row' ><div class='se-dni se-half' >";
-						echo "<label>" . __("ID/DNI/Passport Number: ", 'se') . "</label>";
+						echo "<label>" . __("Identity Number: ", 'se') . "</label>";
 						echo "<input type='text' id='se-dni' name='dni' value='".$dni."' readonly='readonly' >";
 					echo "</div>";
 		

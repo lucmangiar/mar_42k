@@ -43,7 +43,7 @@ echo "</div>";
 // Email
 echo "<div class='se-email se-half' >";
 echo "<label>" . __("Email Address: ", 'se') . "</label>";
-echo "<label>" . Sigma_Templates_Utilities::hide_email($event_data['email']) . "</label>";
+echo "<label>" . $event_data['email'] . "</label>";
 echo "</div></div>";
 
 // Gender
@@ -58,19 +58,17 @@ echo "<label>" . __("Birth Date: ", 'se') . "</label>";
 echo "<label>" . $event_data['bday'] . "</label>";
 echo "</div></div>";
 
-// El numero de telefono no se muestra por motivos de seguridad
 // Telephone Number
-// echo "<div class='se-row' ><div class='se-phone se-half' >";
-// echo "<label>" . __("Telephone Number: ", 'se') . "</label>";
-// echo "<label>" . $event_data['phone'] . "</label>";
-// echo "</div>";
+echo "<div class='se-row' ><div class='se-phone se-half' >";
+echo "<label>" . __("Telephone Number: ", 'se') . "</label>";
+echo "<label>" . $event_data['phone'] . "</label>";
+echo "</div>";
 
-// La dirección no se muestra por motivos de seguridad
 // Full Address
-// echo "<div class='se-addr se-half' >";
-// echo "<label>" . __("Full Address (incl. District/Province): ", 'se') . "</label>";
-// echo "<label>" . $event_data['addr'] . "</label>";
-// echo "</div></div>";
+echo "<div class='se-addr se-half' >";
+echo "<label>" . __("Full Address (incl. District/Province): ", 'se') . "</label>";
+echo "<label>" . $event_data['addr'] . "</label>";
+echo "</div></div>";
 
 // Club Name
 echo "<div class='se-row' ><div class='se-club se-half' >";
@@ -87,3 +85,4 @@ if($event_data['organizer']['question'] != ''):
 endif;
 
 echo "</div>";
+?>

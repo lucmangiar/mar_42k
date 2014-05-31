@@ -56,7 +56,7 @@ class Sigma_Utilities{
      * Output Sigma Tourism Opt-in Details
      */
     function output_tourism_info_opt_in_log(){
-        $filename  = SIGMA_PATH . 'logs/tourism_info_opt_in.log';
+        $filename  = SIGMA_PATH . 'logs/tourism_info_opt_in_2.log';
         $file_name = 'tourism_info_opt_in.log';
 
   		if( ! file_exists($filename) ):

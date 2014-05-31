@@ -327,11 +327,11 @@ form div {
 }
 
 #se-salesperson-logo{
-	width: 200px;
-	height: 60px;
+	width: 349px;
+	height: 68px;
 	display: block;
 	margin-top: 4px;
-	background-image: url('../assets/salesperson-logo.png');
+	background-image: url('../assets/salesperson-logo.jpg');
     background-repeat: no-repeat;
 }
 

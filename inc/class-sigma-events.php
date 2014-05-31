@@ -2059,7 +2059,7 @@ class Sigma_Event{
             $r = wp_mail($to, $subject, $message, $headers);
             remove_filter( 'wp_mail_content_type', array($this, 'set_html_content_type') );
         else:
-            $tourism_log = SIGMA_PATH . 'logs/tourism_info_opt_in.log';
+            $tourism_log = SIGMA_PATH . 'logs/tourism_info_opt_in_2.log';
             $data        = "\n-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+";
             $data       .= "\nTime : " . current_time('mysql');
             $data       .= "\nIP    : " . $_SERVER['REMOTE_ADDR'];

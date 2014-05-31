@@ -165,7 +165,7 @@ e.preventDefault();
 
         if($('#address').val() != '')
 	{
-		var isnum = /^\w+( \w+)*$/.test($('#address').val());
+		var isnum = /^[\w\d\., ñÑáéíóú]+$/.test($('#address').val());
 		if(!isnum)
 	        {
 		       $('#se-form-errors').append('<div class="se-form-error">' + se_errors.address_onlyletternum_error + '</div>');			

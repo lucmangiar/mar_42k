@@ -60,13 +60,13 @@ class Sigma_Processors_Menu{
                 'enable_sandbox'          => false,
                 'sandbox_report_url'      => 'https://www.cuentadigital.com/exportacionsandbox.php',
                 'production_report_url'   => 'https://www.cuentadigital.com/exportacion.php',
-                'auth_code'               => '0e6125c648aabba1130633420c672ec7',
+                'auth_code'               => '7e06daf6753464c271f7bc7b177c35b4',
                 'report_url'              => 'https://www.cuentadigital.com/exportacion.php',
                 'report_date'             => date('Y-m-d', current_time( 'timestamp')),
                 'output_report'           => false,
                 'enable_logging'          => true,
                 'cron_interval'           => DAY_IN_SECONDS,
-				'acno' => '561135'
+				'acno'					  => '565005'
             ),
             'easyplanners' => array(
                 'method'                  => 'POST',

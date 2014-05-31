@@ -126,7 +126,7 @@ echo '<div class="se-wrapper se-payments-wrapper" >';
             // Dineromail
             if( $event_data['freedom']['dineromail']  || 'dineromail' == $event_data['processor'] ):
                 echo '<p class="se-processor-box"><input id="dineromail" type="radio" value="dineromail" name="payment_processor" ' .
-                checked( $event_data['processor'], 'dineromail' , false )  . ' >' . __( ' Dineromail', 'se') . '<span    id="se-dineromail-logo" ></span></p>';
+                checked( $event_data['processor'], 'dineromail' , false )  . ' >' . __( ' Credit Cards', 'se') . '<span    id="se-dineromail-logo" ></span></p>';
             endif;
 
             // CuentaDigital
@@ -138,7 +138,7 @@ echo '<div class="se-wrapper se-payments-wrapper" >';
             // Salesperson
             if( $event_data['freedom']['salesperson']  || 'salesperson' == $event_data['processor'] ):
                 echo '<p class="se-processor-box"><input id="salesperson" type="radio" value="salesperson" name="payment_processor" ' .
-                checked( $event_data['processor'], 'salesperson' , false )  . ' >' . __( ' Salesperson', 'se') . '<span    id="se-salesperson-logo" ></span></p>';
+                checked( $event_data['processor'], 'salesperson' , false )  . ' >' . __( ' Through official travel agency', 'se') . '<span    id="se-salesperson-logo" ></span></p>';
             endif;
 
             echo '<div id="se-payment-processor-spacer" ></div>';
@@ -160,26 +160,26 @@ echo '<div class="se-wrapper se-payments-wrapper" >';
 
         $style = 'dineromail' != $event_data['processor'] ? 'style="display:none;"' : '';
         echo '<div id="dineromail-payment-options" ' . $style . ' >';
-        echo '<p><b>' . __( 'Payment Options', 'se') . '</b></p>';
-        echo '<p class="se-processor-methods"><input id="cash"         type="radio" value="dineromail_cash"         name="dineromail_medium" checked="checked"	> Efectivo<span id="se-cash" ></span></p>';
-        echo '<p class="se-processor-methods"><input id="credit_cards" type="radio" value="dineromail_credit_cards" name="dineromail_medium"					> Tarjetas de Cr&eacute;dito<span id="se-credit-cards" ></span></p>';
+        echo '</br></br><p><b>' . __( 'Payment Options', 'se') . '</b></p>';
+        echo '<p class="se-processor-methods"><input id="cash"         type="radio" value="dineromail_cash"         name="dineromail_medium"			DISABLED> Cash<span id="se-cash" ></span></p>';
+        echo '<p class="se-processor-methods"><input id="credit_cards" type="radio" value="dineromail_credit_cards" name="dineromail_medium" checked="checked"	> Credit Cards<span id="se-credit-cards" ></span></p>';
         echo '</div>';
 
         $style = 'salesperson' != $event_data['processor'] ? 'style="display:none;"' : '';
         echo '<div id="salesperson-payment-options" ' . $style . ' >';
-        echo '<p><b>' . __( 'Payment through our Agent (Salesperson)', 'se') . '</b></p>';
-        echo '<img src="' . SIGMA_URL . 'assets/salesperson-payment-method.png" >';
+        echo '<p><b>' . __( 'Pay through Play Patagonia, our official travel agency', 'se') . '</b></p>';
+        echo '<img src="' . SIGMA_URL . 'assets/salesperson-payment-method.jpg" >';
         echo '</div>';
 
         $style = 'cuentadigital' != $event_data['processor'] ? 'style="display:none;"' : '';
         echo '<div id="cuentadigital-payment-options" ' . $style . ' >';
-        echo '</br><p><b>' . __( 'Print barcode to pay cash', 'se') . '</b></p>';
+        echo '</br></br><p><b>' . __( 'Print barcode to pay cash', 'se') . '</b></p>';
         echo '<img src="' . SIGMA_URL . 'assets/cuentadigital-barcode.png" >';
         echo '</div>';
 
 		$style = 'ep' != $event_data['processor'] ? 'style="display:none;"' : '';
         echo '<div id="ep-payment-options" ' . $style . ' >';
-        echo '<p><b>' . __( 'Payment Options', 'se') . '</b></p>';
+        echo '</br></br><p><b>' . __( 'Payment Options', 'se') . '</b></p>';
         echo '<img src="' . SIGMA_URL . 'assets/ep-payment-methods.png" >';
         // Use the following to set card by the registrant. You may need to adjust the confirmation page code too.
         //echo '<p class="se-processor-methods"><input id="visa" type="radio" value="ep_visa"       name="medio_de_pago" checked="checked" >Visa<span id="se-ep-visa" ></span></p>';

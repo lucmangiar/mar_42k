@@ -164,7 +164,7 @@ class Sigma_Dineromail extends Sigma_Payment_Processor
         $price          = $event_data['price']['value'];
         $event_name     = $event_data['title_'];
         $event_id       = $event_data['id'];
-        $payment_method = 'dineromail_cash';
+        $payment_method = 'dineromail_credit_cards';
 
         /* Whether the payment button should be present or not */
         $submit = $submit

@@ -76,8 +76,8 @@ class Sigma_CuentaDigital extends Sigma_Payment_Processor
         $email          = $event_data['email'];
         $payment_method = 'dineromail_cash';
 
-        $payment_ends   = (int) ( ( $event_data['period']['end'] - current_time('timestamp') ) / DAY_IN_SECONDS );
-		
+        //$payment_ends   = (int) ( ( $event_data['period']['end'] - current_time('timestamp') ) / DAY_IN_SECONDS ); //How many days left for registration
+		$payment_ends   = 7;
 
         /* Whether the payment button should be present or not */
         $submit = $submit
@@ -100,7 +100,9 @@ class Sigma_CuentaDigital extends Sigma_Payment_Processor
                 <input type="hidden" value="' . $amount . '" name="precio2">
                 <input type="hidden" value="' . ($payment_ends + 1) . '" name="venc2">
                 <input type="hidden" value="' . $email . '" name="hacia">
-                <input type="hidden" value="' . $concepto . '" name="concepto">';
+                <input type="hidden" value="' . $concepto . '" name="concepto">
+				<input type="hidden" value="0" name="m0">
+				<input type="hidden" value="1" name="m2">';
             $form .= $submit . '</form>';
 
         // Free Event?
