@@ -109,7 +109,7 @@ class Sigma_PayPal extends Sigma_Payment_Processor {
     }
 
     private function get_paypal_url() {
-        return ($this->using_sandbox? "https://www.sandbox.paypal.com/webscr" : "https://www.paypal.com/cgi-bin/webscr");
+        return ($this->using_sandbox? "https://www.sandbox.paypal.com/cgi-bin/webscr" : "https://www.paypal.com/cgi-bin/webscr");
     }
 
     private function get_paypal_endpoint() {
