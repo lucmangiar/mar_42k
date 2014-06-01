@@ -62,6 +62,8 @@ class Sigma_PayPal extends Sigma_Payment_Processor {
      */
     private $paypal_email;
 
+    private $using_sandbox = true;
+
     /**
      * Construct the Paypal Payment Processor Object
      *
