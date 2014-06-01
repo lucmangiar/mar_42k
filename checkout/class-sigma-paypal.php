@@ -132,37 +132,34 @@ class Sigma_PayPal extends Sigma_Payment_Processor {
                 "/sigma-events/payment/?sigma_token=" . $operation_number . "#se-order'>Modify</a>";
         }
 
-        // Premium Event?
-        if($amount > 0) {
-            $form = '<form action="' . Paypal_Utilities::get_paypal_url() . '" id="se-paypal-form" method="post" >';
+        $form = '<form action="' . Paypal_Utilities::get_paypal_url() . '" id="se-paypal-form" method="post" >';
 
-            // This is a shipping cart
-            $form .= '<input type="hidden" name="cmd" value="x_cart">';
+        // This is a shipping cart
+        $form .= '<input type="hidden" name="cmd" value="x_cart">';
 
-            // Paypal ID
-            $form .= '<input type="hidden" name="business" value="' . $this->get_api_credentials()['paypal_email'] . '">';
+        // Paypal ID
+        $form .= '<input type="hidden" name="business" value="' . $this->get_api_credentials()['paypal_email'] . '">';
 
-            // Send the operation number
-            $form .= '<input type="hidden" name="custom" value="' . $operation_number . '">';
+        // Send the operation number
+        $form .= '<input type="hidden" name="custom" value="' . $operation_number . '">';
 
-            // The bill is in dollars
-            $form .= '<input type="hidden" name="currency_code" value="USD">';
+        // The bill is in dollars
+        $form .= '<input type="hidden" name="currency_code" value="USD">';
 
-            // Item name and value
-            $form .= '<input type="hidden" name="item_name" value="' . $event_name . '">';
-            $form .= '<input type="hidden" name="item_value" value="' . $event_id . '">';
+        // Item name and value
+        $form .= '<input type="hidden" name="item_name" value="' . $event_name . '">';
+        $form .= '<input type="hidden" name="item_value" value="' . $event_id . '">';
 
-            // Amount.
-            $form .= '<input type="hidden" name="amount" value="' . $amount . '">';
+        // Amount.
+        $form .= '<input type="hidden" name="amount" value="' . $amount . '">';
 
-            // Quantity
-            $form .= '<input type="hidden" name="quantity" value="1" >';
+        // Quantity
+        $form .= '<input type="hidden" name="quantity" value="1" >';
 
-            // Notify URL. Is the URL used by Paypal for POSTing me the information of the payment
-            $form .= '<input type="hidden" name="notify_url" value="' . get_home_url() . '/' . Paypal_Utilities::get_paypal_endpoint() . '" >';
+        // Notify URL. Is the URL used by Paypal for POSTing me the information of the payment
+        $form .= '<input type="hidden" name="notify_url" value="' . get_home_url() . '/' . Paypal_Utilities::get_paypal_endpoint() . '" >';
 
-            $form .= $input_payment_proceed . '</form>';
-        }
+        $form .= $input_payment_proceed . '</form>';
 
         return $form;
     }
@@ -238,36 +235,34 @@ class Sigma_PayPal extends Sigma_Payment_Processor {
      * @param   array $registration_table   Registration Table Name
      * @return  array Double element array. 'post' and 'registration' indices.
      */
-
-    // TODO Liquidar este metodo
     function setup_post_and_registration_data( $POST, $registration_table ){
         // We get the operation number form custom
-        $operation_number = $POST['custom'];
-        if(empty($operation_number)) {
+        $post["token"] = $POST['custom'];
+        if(empty($post["token"])) {
             $this->log_error( "\nError: No 'noperacion' field in the POST Error" );
             return false;
         }
 
         // (1.1) Registration data
-        $registration = $this->get_registration_record( $registration_table, $operation_number );
-        if( ! $registration ):
-            $this->log_error( "\nError: No registration record | Token: " . $operation_number );
+        $registration = $this->get_registration_record( $registration_table, $post["token"] );
+        if( ! $registration ) {
+            $this->log_error( "\nError: No registration record | Token: " . $post["token"] );
             return false;
-        endif;
+        }
 
         // (2) Amount | Monto
-        $post['monto'] = isset($POST['monto']) ? sanitize_text_field($POST['monto']) : '';
+        $post['monto'] = isset($POST['mc_gross']) ? sanitize_text_field($POST['mc_gross']) : '';
         $post['monto'] = str_replace(",", "", $post['monto']);
         $price = $registration['amount'];
-        if($price != $post['monto']):
+        if($price != $post['monto']) {
             $this->log_error( "\nError: Amounts Not Matched | Token : " . $post["token"]
                 . ' | Registration : ' . $price . ' | POST : ' . $post['monto']);
             return false;
-        endif;
+        }
 
         // (3) Paid | Resulado
-        $post['resultado']    = isset($POST['resultado']) ? sanitize_text_field($POST['resultado']) : '';
-        $post['resultado']    = $post['resultado'] == 'APROBADA' ? 'paid' : 'notpaid';
+        $post['resultado']    = isset($POST['payment_status']) ? sanitize_text_field($POST['payment_status']) : '';
+        $post['resultado']    = $post['resultado'] == 'Completed' ? 'paid' : 'notpaid';
 
         // don't assign a new sequence number if already assigned a sequence number
         if( 0 >= $registration['seq_no'] ):
@@ -289,31 +284,32 @@ class Sigma_PayPal extends Sigma_Payment_Processor {
         endif;
 
         // (4) Auth Code | codautorizacion
-        $post['codeauth'] = isset($POST['codautorizacion'])
-          ? sanitize_text_field($POST['codautorizacion']) : '';
+        //$post['codeauth'] = isset($POST['codautorizacion'])
+        //  ? sanitize_text_field($POST['codautorizacion']) : '';
+        $post['codeauth'] = '';
 
         // (5) Email | emailcomprador
-        $post['email'] = isset($POST['emailcomprador'])
-          ? sanitize_email($POST['emailcomprador']) : '';
+        $post['email'] = isset($POST['payer_email'])
+          ? sanitize_email($POST['payer_email']) : '';
 
         // (6) DateTime | fechahora
-        $post['fechahora'] = isset($POST['fechahora'])
-          ? sanitize_text_field($POST['fechahora']) : '';
+        $post['fechahora'] = isset($POST['payment_date'])
+          ? sanitize_text_field($POST['payment_date']) : '';
 
         /**
          * DateTime Formatting
          */
         $datetime = explode(' ', $post['fechahora']);
-        $date = explode('/', $datetime[0]);
-        $post['fechahora'] = $date[2] . '-' . $date[1] . '-' . $date[0] . ' ' . $datetime[1];
+        $post['fechahora'] = $datetime[1] . '-' . $this->parse_month($datetime[2]) . '-' . $datetime[3] . ' ' . $datetime[0];
 
         // (7) Title | titular
-        $post['titular'] = isset($POST['titular'])
-          ? sanitize_text_field($POST['titular']) : '';
+        //$post['titular'] = isset($POST['titular'])
+        //  ? sanitize_text_field($POST['titular']) : '';
+        $post['titular'] = '';
 
         // (8) Reason | motivo
-        $post['motivo'] = isset($POST['motivo'])
-          ? sanitize_text_field($POST['motivo']) : '';
+        $post['motivo'] = isset($POST['reason_code'])
+          ? sanitize_text_field($POST['reason_code']) : '';
 
         $output = array(
             'registration' => $registration,
@@ -322,13 +318,30 @@ class Sigma_PayPal extends Sigma_Payment_Processor {
         return $output;
     }
 
+    private function parse_month($month) {
+        $months = array(
+            'Jan' => '01',
+            'Feb' => '02',
+            'Mar' => '03',
+            'Apr' => '04',
+            'May' => '05',
+            'Jun' => '06',
+            'Jul' => '07',
+            'Aug' => '08',
+            'Sep' => '09',
+            'Oct' => '10',
+            'Nov' => '11',
+            'Dec' => '12',
+        );
+        return $months[$month];
+    }
+
     /**
      * Check IP address for a non free event.
      *
      * @param   array $post     POSTed data
      * @param   array $options  Sigma Options Array
      * @return  boolean  Valid IP address or not
-     */
     function check_ip( $post, $options ){
         $check_ip   = $this->processor_options['paypal']['enable_ip'];
         $paypal_ip = $this->processor_options['paypal']['ip_address'];
