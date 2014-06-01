@@ -259,6 +259,12 @@ e.preventDefault();
             $("#se-update-pending-status").fadeIn();
             updateRegistrationRecord();
             $('#se-ep-form').submit();
+        } else if(str == 0 && 'paypal' == processor) {
+            e.preventDefault();
+            $("#se-pay-button").hide();
+            $("#se-update-pending-status").fadeIn();
+            updateRegistrationRecord();
+            $('#se-paypal-form').submit();
         } else if(str == 0){
             e.preventDefault();
             $("#se-pay-button").hide();
