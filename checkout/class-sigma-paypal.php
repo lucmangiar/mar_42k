@@ -108,6 +108,14 @@ class Sigma_PayPal extends Sigma_Payment_Processor {
         );
     }
 
+    private function get_paypal_url() {
+        return ($this->using_sandbox? "https://www.sandbox.paypal.com/webscr" : "https://www.paypal.com/cgi-bin/webscr");
+    }
+
+    private function get_paypal_endpoint() {
+        return 'post_paypal_ipn';
+    }
+
     /**
      * Get Paypal Checkout Form
      *
@@ -134,7 +142,7 @@ class Sigma_PayPal extends Sigma_Payment_Processor {
                 "/sigma-events/payment/?sigma_token=" . $operation_number . "#se-order'>Modify</a>";
         }
 
-        $form = '<form action="' . Paypal_Utilities::get_paypal_url() . '" id="se-paypal-form" method="post" >';
+        $form = '<form action="' . $this->get_paypal_url() . '" id="se-paypal-form" method="post" >';
 
         // This is a shipping cart
         $form .= '<input type="hidden" name="cmd" value="x_cart">';
@@ -159,7 +167,7 @@ class Sigma_PayPal extends Sigma_Payment_Processor {
         $form .= '<input type="hidden" name="quantity" value="1" >';
 
         // Notify URL. Is the URL used by Paypal for POSTing me the information of the payment
-        $form .= '<input type="hidden" name="notify_url" value="' . get_home_url() . '/' . Paypal_Utilities::get_paypal_endpoint() . '" >';
+        $form .= '<input type="hidden" name="notify_url" value="' . get_home_url() . '/' . $this->get_paypal_endpoint() . '" >';
 
         $form .= $input_payment_proceed . '</form>';
 
@@ -172,10 +180,10 @@ class Sigma_PayPal extends Sigma_Payment_Processor {
      * Add rewrite rule to handle POSTs from Paypal.
      */
     function paypal_rewrite(){
-        $paypal_regex = Paypal_Utilities::get_paypal_endpoint() . '/?$';
+        $paypal_regex = $this->get_paypal_endpoint() . '/?$';
         add_rewrite_rule($paypal_regex,
-        'index.php?' . Paypal_Utilities::get_paypal_endpoint() . '=sigma', 'top');
-        add_rewrite_tag('%' . Paypal_Utilities::get_paypal_endpoint() . '%', '([^&]+)');
+        'index.php?' . $this->get_paypal_endpoint() . '=sigma', 'top');
+        add_rewrite_tag('%' . $this->get_paypal_endpoint() . '%', '([^&]+)');
     }
 
     /**
@@ -185,7 +193,7 @@ class Sigma_PayPal extends Sigma_Payment_Processor {
      */
     function redirect_paypal_requests(){
         global $wp_query;
-        if(!isset($wp_query->query_vars[Paypal_Utilities::get_paypal_endpoint()]))
+        if(!isset($wp_query->query_vars[$this->get_paypal_endpoint()]))
             return;
 
         $this->process_paypal_request();
