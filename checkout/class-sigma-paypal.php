@@ -1,5 +1,7 @@
 <?php
 
+require 'class-sigma-paypal-config.php';
+
 class Sigma_PayPal extends Sigma_Payment_Processor {
     /**
      * Sigma Registration Table Name
