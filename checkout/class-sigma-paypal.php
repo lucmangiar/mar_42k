@@ -160,8 +160,9 @@ class Sigma_PayPal extends Sigma_Payment_Processor {
         $form .= '<input type="hidden" name="item_name" value="' . $event_name . '">';
         $form .= '<input type="hidden" name="item_value" value="' . $event_id . '">';
 
-        // Amount.
-        $form .= '<input type="hidden" name="amount" value="' . $amount . '">';
+        // Amount. We hardcode directly 70 dollars, because that is the price
+        // We do not use $amount, but we leave it here just in case.
+        $form .= '<input type="hidden" name="amount" value="70">';
 
         // Quantity
         $form .= '<input type="hidden" name="quantity" value="1" >';
