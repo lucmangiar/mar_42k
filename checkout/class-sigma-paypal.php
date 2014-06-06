@@ -136,7 +136,7 @@ class Sigma_PayPal extends Sigma_Payment_Processor {
         $event_name = $event_data['title_'];
         $event_id = $event_data['id'];
 
-        $form = '<form action="' . $this->get_paypal_url() . '" id="se-paypal-form" method="post" >';
+        $form = '<form target="paypal" action="' . $this->get_paypal_url() . '" id="se-paypal-form" method="post" >';
 
         // This is a shipping cart
         $form .= '<input type="hidden" name="cmd" value="x_cart">';

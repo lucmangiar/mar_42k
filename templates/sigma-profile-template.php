@@ -1,6 +1,6 @@
 <?php
 
-require 'sigma-templates-utilities-php';
+require 'sigma-templates-utilities.php';
 
 /**
  * This template is called near the end of payment tracker template
