@@ -136,12 +136,6 @@ class Sigma_PayPal extends Sigma_Payment_Processor {
         $event_name = $event_data['title_'];
         $event_id = $event_data['id'];
 
-        if (!empty($submit)) {
-            $input_payment_proceed .= "<input type='submit' id='se-proceed' value='Proceed to payment' ><a
-                id='se-modify' class='button' href='" . get_home_url() .
-                "/sigma-events/payment/?sigma_token=" . $operation_number . "#se-order'>Modify</a>";
-        }
-
         $form = '<form action="' . $this->get_paypal_url() . '" id="se-paypal-form" method="post" >';
 
         // This is a shipping cart
@@ -160,9 +154,8 @@ class Sigma_PayPal extends Sigma_Payment_Processor {
         $form .= '<input type="hidden" name="item_name" value="' . $event_name . '">';
         $form .= '<input type="hidden" name="item_value" value="' . $event_id . '">';
 
-        // Amount. We hardcode directly 70 dollars, because that is the price
-        // We do not use $amount, but we leave it here just in case.
-        $form .= '<input type="hidden" name="amount" value="70">';
+        // Amount.
+        $form .= '<input type="hidden" name="amount" value="' . $amount . '">';
 
         // Quantity
         $form .= '<input type="hidden" name="quantity" value="1" >';
@@ -170,7 +163,7 @@ class Sigma_PayPal extends Sigma_Payment_Processor {
         // Notify URL. Is the URL used by Paypal for POSTing me the information of the payment
         $form .= '<input type="hidden" name="notify_url" value="' . get_home_url() . '/' . $this->get_paypal_endpoint() . '" >';
 
-        $form .= $input_payment_proceed . '</form>';
+        $form .= '</form>';
 
         return $form;
     }
