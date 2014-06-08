@@ -461,10 +461,16 @@ msgstr ""
 msgid "Decidir Settings"
 msgstr "Decidir Settings"
 
+msgid "Paypal Settings"
+msgstr "Paypal Settings"
+
 #: admin/tab-processor-decidir.php:39
 #: ../sigma_events/admin/tab-processor-decidir.php:39
 msgid "Enable Decidir Logging"
 msgstr "Enable Decidir Logging"
+
+msgid "Enable Paypal Logging"
+msgstr "Enable Paypal Logging"
 
 #: admin/tab-processor-decidir.php:47 admin/tab-processor-dineromail.php:47
 #: ../sigma_events/admin/tab-processor-decidir.php:47
@@ -476,6 +482,9 @@ msgstr "Validate IP"
 #: ../sigma_events/admin/tab-processor-decidir.php:60
 msgid "Restrict POSTs to Decidir IP"
 msgstr "Restrict POSTs to Decidir IP"
+
+msgid "Restrict POSTs to Paypal IP"
+msgstr "Restrict POSTs to Paypal IP"
 
 #: admin/tab-processor-dineromail.php:14
 #: ../sigma_events/admin/tab-processor-dineromail.php:14
