@@ -97,7 +97,7 @@ class Sigma_PayPal extends Sigma_Payment_Processor {
         if ($this->using_sandbox) {
             $this->paypal_email = 'javierpetrucci+PPSANDBOX@gmail.com';
         } else {
-            $this->paypal_email = '';
+            $this->paypal_email = 'javierpetrucci@gmail.com';
         }
     }
 
@@ -129,17 +129,18 @@ class Sigma_PayPal extends Sigma_Payment_Processor {
      */
     function get_form( $event_data, $submit ){
         /* Whether the payment button should be present or not */
-        $input_payment_proceed = '';
 
         $operation_number = $event_data['token'];
         $amount = $event_data['price']['value'];
         $event_name = $event_data['title_'];
         $event_id = $event_data['id'];
 
+        $amount = number_format((float)($amount/100), 2, '.', '');
+
         $form = '<form action="' . $this->get_paypal_url() . '" id="se-paypal-form" method="post" >';
 
         // This is a shipping cart
-        $form .= '<input type="hidden" name="cmd" value="x_cart">';
+        $form .= '<input type="hidden" name="cmd" value="_xclick">';
 
         // Paypal ID
         $form .= '<input type="hidden" name="business" value="' . $this->get_api_credentials()['paypal_email'] . '">';
@@ -152,7 +153,7 @@ class Sigma_PayPal extends Sigma_Payment_Processor {
 
         // Item name and value
         $form .= '<input type="hidden" name="item_name" value="' . $event_name . '">';
-        $form .= '<input type="hidden" name="item_value" value="' . $event_id . '">';
+        $form .= '<input type="hidden" name="item_number" value="' . $event_id . '">';
 
         // Amount.
         $form .= '<input type="hidden" name="amount" value="' . $amount . '">';
