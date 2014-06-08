@@ -188,8 +188,8 @@ class Sigma_PayPal extends Sigma_Payment_Processor {
      */
     function redirect_paypal_requests(){
         global $wp_query;
-        if(!isset($wp_query->query_vars[$this->get_paypal_endpoint()]))
-            return;
+        //if(!isset($wp_query->query_vars[$this->get_paypal_endpoint()]))
+        //    return;
 
         $this->process_paypal_request();
     }
