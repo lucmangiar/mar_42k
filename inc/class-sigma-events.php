@@ -1793,6 +1793,9 @@ class Sigma_Event{
          *
          *   (v)
          * - CuentaDigital
+         *
+         *   (vi)
+         * - Paypal
          */
         if( 'decidir' == $payment_processor ):
             $medium = isset($_POST['medio_de_pago'])     ? sanitize_text_field($_POST['medio_de_pago'])     : '';
@@ -1804,6 +1807,8 @@ class Sigma_Event{
             $medium = 'ep';
         elseif( 'cuentadigital' == $payment_processor ):
             $medium = 'cuentadigital';
+        elseif( 'paypal' == $payment_processor ):
+            $medium = 'paypal';
         endif;
         if( '' == $medium )
             wp_die( __( 'Med: Cheatin&#8217; uh?' ) );

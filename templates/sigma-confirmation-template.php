@@ -166,7 +166,6 @@ echo '<table>';
 
     /**
      * Paypal Processor Form
-     * TODO LUCHO: el get_form recibe parametros distintos a los que se le envia. Chequear bien esto
      */
     elseif( 'paypal' == $event_data['medium'] ):
         echo $sigma_events->payments_paypal->get_form(
