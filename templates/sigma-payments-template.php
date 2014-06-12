@@ -129,6 +129,12 @@ echo '<div class="se-wrapper se-payments-wrapper" >';
                 checked( $event_data['processor'], 'dineromail' , false )  . ' >' . __( ' Credit Cards', 'se') . '<span    id="se-dineromail-logo" ></span></p>';
             endif;
 
+            // Paypal
+            if( $event_data['freedom']['paypal']  || 'paypal' == $event_data['processor'] ):
+                echo '<p class="se-processor-box"><input id="paypal" type="radio" value="paypal" name="payment_processor" ' .
+                    checked( $event_data['processor'], 'paypal' , false )  . ' >' . __( ' Paypal', 'se') . '<span    id="se-paypal-logo" ></span></p>';
+            endif;
+
             // CuentaDigital
             if( $event_data['freedom']['cuentadigital']  || 'cuentadigital' == $event_data['processor'] ):
                 echo '<p class="se-processor-box"><input id="cuentadigital" type="radio" value="cuentadigital" name="payment_processor" ' .
@@ -163,6 +169,12 @@ echo '<div class="se-wrapper se-payments-wrapper" >';
         echo '</br></br><p><b>' . __( 'Payment Options', 'se') . '</b></p>';
         echo '<p class="se-processor-methods"><input id="cash"         type="radio" value="dineromail_cash"         name="dineromail_medium"			DISABLED> Cash<span id="se-cash" ></span></p>';
         echo '<p class="se-processor-methods"><input id="credit_cards" type="radio" value="dineromail_credit_cards" name="dineromail_medium" checked="checked"	> Credit Cards<span id="se-credit-cards" ></span></p>';
+        echo '</div>';
+
+        $style = 'paypal' != $event_data['processor'] ? 'style="display:none;"' : '';
+        echo '<div id="paypal-payment-options" ' . $style . ' >';
+        echo '<p><b>' . __( 'Payment Options', 'se') . '</b></p>';
+        echo '<p class="se-processor-methods"><input id="credit_cards" type="radio" value="paypal_credit_cards" name="paypal_medium"					> Tarjetas de Cr&eacute;dito<span id="se-credit-cards" ></span></p>';
         echo '</div>';
 
         $style = 'salesperson' != $event_data['processor'] ? 'style="display:none;"' : '';
@@ -231,6 +243,11 @@ echo '<div class="se-wrapper se-payments-wrapper" >';
     /* Present the CuentaDigital Payment Form. */
     if( 'cuentadigital' == $event_data['processor'] || $event_data['freedom']['cuentadigital'] ):
         echo $sigma_events->payments_cuentadigital->get_form($event_data, false);
+    endif;
+
+    /* Present the Paypal Payment Form. */
+    if( 'paypal' == $event_data['processor'] || $event_data['freedom']['paypal'] ):
+        echo $sigma_events->payments_paypal->get_form($event_data, false);
     endif;
 
     /* Present the EP Payment Form. */

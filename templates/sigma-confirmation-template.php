@@ -41,6 +41,12 @@ elseif( 'salesperson' == $event_data['medium'] ):
     $method_of_payment = 'Via a Salesperson <img src="' . SIGMA_URL . 'assets/salesperson-payment-method.png" >';
 
 /**
+ * Paypal
+ */
+elseif( 'paypal' == $event_data['medium'] ):
+    $method_of_payment = 'Via a Paypal <img src="' . SIGMA_URL . 'assets/paypal-payment-method.png" >';
+
+/**
  * Sigma EP
  */
 elseif( 'ep' == $event_data['medium'] ):
@@ -153,6 +159,16 @@ echo '<table>';
      */
     elseif( 'salesperson' == $event_data['medium'] ):
         echo $sigma_events->payments_salesperson->get_form(
+            $event_data['token'],
+            $total_price,
+            true
+        );
+
+    /**
+     * Paypal Processor Form
+     */
+    elseif( 'paypal' == $event_data['medium'] ):
+        echo $sigma_events->payments_paypal->get_form(
             $event_data['token'],
             $total_price,
             true

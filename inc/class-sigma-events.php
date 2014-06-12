@@ -542,6 +542,7 @@ class Sigma_Event{
             <option value='salesperson' " . selected( $processor['local'], 'salesperson' , false ) . ">Salesperson</option>
             <option value='cuentadigital' " . selected( $processor['local'], 'cuentadigital' , false ) . ">CuentaDigital</option>
             <option value='ep' " . selected( $processor['local'], 'ep' , false ) . ">EasyPlanners</option>
+            <option value='paypal'" . selected( $processor['local'], 'paypal', false ) . ">Paypal</option>
             </select>
             </td></tr>
             <tr><td></td><td>Additional Processors for Locals</td></tr>
@@ -555,6 +556,8 @@ class Sigma_Event{
             <input name='localprocessorcuentadigital' type='checkbox' " . checked( $processor['local_cuentadigital'], true , false ) . ">CuentaDigital
             </td></td><tr><td></td><td>
             <input name='localprocessorep' type='checkbox' " . checked( $processor['local_ep'], true , false ) . ">EasyPlanners
+            </td></td><tr><td></td><td>
+            <input name='localpaypalrep' type='checkbox' " . checked( $processor['local_paypal'], true , false ) . ">Paypal
             </td></tr>";
 
         $output .= '<tr><td colspan="2" style="padding-top: 20px;" ><b>Foreign Payment Processing</b></td></tr>';
@@ -566,6 +569,7 @@ class Sigma_Event{
             <option value='salesperson' " . selected( $processor['foreign'], 'salesperson' , false ) . ">Salesperson</option>
             <option value='cuentadigital' " . selected( $processor['foreign'], 'cuentadigital' , false ) . ">CuentaDigital</option>
             <option value='ep' " . selected( $processor['foreign'], 'ep' , false ) . ">EasyPlanners</option>
+            <option value='paypal'" . selected( $processor['foreign'], 'paypal', false ) . ">Paypal</option>
             </select>
             </td></tr>
             <tr><td></td><td>Additional Processors for Foreigners</td></tr>
@@ -579,6 +583,8 @@ class Sigma_Event{
             <input name='foreignprocessorcuentadigital' type='checkbox' " . checked( $processor['foreign_cuentadigital'], true , false ) . ">CuentaDigital
             </td></td><tr><td></td><td>
             <input name='foreignprocessorep' type='checkbox' " . checked( $processor['foreign_ep'], true , false ) . ">EasyPlanners
+            </td></td><tr><td></td><td>
+            <input name='foreignpaypalrep' type='checkbox' " . checked( $processor['foreign_paypal'], true , false ) . ">Paypal
             </td></tr>";
 
         $output .= '</table>';
@@ -993,6 +999,7 @@ class Sigma_Event{
         $processor['local_salesperson']    = isset($_POST['localprocessorsalesperson']) ? true : false;
         $processor['local_cuentadigital']  = isset($_POST['localprocessorcuentadigital']) ? true : false;
         $processor['local_ep']             = isset($_POST['localprocessorep']) ? true : false;
+        $processor['local_paypal']         = isset($_POST['localprocessorpaypal']) ? true : false;
 
         $processor['foreign']                = sanitize_text_field($_POST['foreignprocessor']);
         $processor['foreign_decidir']        = isset($_POST['foreignprocessordecidir']) ? true : false;
@@ -1000,6 +1007,7 @@ class Sigma_Event{
         $processor['foreign_salesperson']    = isset($_POST['foreignprocessorsalesperson']) ? true : false;
         $processor['foreign_cuentadigital']  = isset($_POST['foreignprocessorcuentadigital']) ? true : false;
         $processor['foreign_ep']             = isset($_POST['foreignprocessorep']) ? true : false;
+        $processor['foreign_paypal']         = isset($_POST['foreignprocessorpaypal']) ? true : false;
 
         // Collect sequence details
         $sequence['sequence']                  = sanitize_text_field($_POST['sequence']);
@@ -1785,6 +1793,9 @@ class Sigma_Event{
          *
          *   (v)
          * - CuentaDigital
+         *
+         *   (vi)
+         * - Paypal
          */
         if( 'decidir' == $payment_processor ):
             $medium = isset($_POST['medio_de_pago'])     ? sanitize_text_field($_POST['medio_de_pago'])     : '';
@@ -1796,6 +1807,8 @@ class Sigma_Event{
             $medium = 'ep';
         elseif( 'cuentadigital' == $payment_processor ):
             $medium = 'cuentadigital';
+        elseif( 'paypal' == $payment_processor ):
+            $medium = 'paypal';
         endif;
         if( '' == $medium )
             wp_die( __( 'Med: Cheatin&#8217; uh?' ) );

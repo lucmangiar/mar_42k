@@ -97,6 +97,11 @@ class Sigma_Events{
     public $payments_dineromail;
 
     /**
+     * Paypal Payments
+     */
+    public $payments_paypal;
+
+    /**
      * Payments via a salesperson
      */
     public $payments_salesperson;
@@ -264,6 +269,12 @@ class Sigma_Events{
         /* Dineromail Payment System Integration */
         require SIGMA_PATH . 'checkout/class-sigma-dineromail.php';
         $this->payments_dineromail = new Sigma_Dineromail(
+            $this->registration_table,
+            $this->payment_table);
+
+        /* Paypal Payment System Integration */
+        require SIGMA_PATH . 'checkout/class-sigma-paypal.php';
+        $this->payments_paypal = new Sigma_PayPal(
             $this->registration_table,
             $this->payment_table);
 
@@ -458,6 +469,11 @@ class Sigma_Events{
          * Add rewrite rules for Decidir SPS.
          */
         $this->payments_decidir->decidir_rewrite();
+
+        /**
+         * Add rewrite rules for Paypal.
+         */
+        $this->payments_paypal->paypal_rewrite();
 
         /**
          * Add rewrite rules for Dineromail.
